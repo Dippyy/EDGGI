@@ -79,7 +79,7 @@
         titlehighScore.fontSize = 25;
         titlehighScore.alpha = 0.7;
         titlehighScore.position = CGPointMake(CGRectGetMidX(self.frame)*4/3, CGRectGetMidY(self.frame)+1*(CGRectGetMidY(self.frame)/3.5));
-        titlehighScore.text = [NSString stringWithFormat:@"%ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
+        titlehighScore.text = [NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
         [self addChild:titlehighScore];
         
         //Edit Name of Player

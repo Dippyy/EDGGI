@@ -86,7 +86,7 @@
         highScore.fontSize = 30;
         highScore.alpha = 0.7;
         highScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/3.5));
-        highScore.text = [NSString stringWithFormat:@"%ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
+        highScore.text = [NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
         
         SGupgradeButton *upgradeButton = [SGupgradeButton upgradeButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/2)];
         upgradeButton.name = @"upgradeTapped";

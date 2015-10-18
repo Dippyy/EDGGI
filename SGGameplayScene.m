@@ -396,7 +396,7 @@
 // [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"HighscoreSaved"];  //This sets the highscore to zero for testing purposes
 
         if(highScore.score > self.highScoreNumber){
-            NSLog(@"score is %ld and highscore is %ld",highScore.score, highScore.highScore);
+            NSLog(@"score is %ld and highscore is %ld",(long)highScore.score, (long)highScore.highScore);
             [[NSUserDefaults standardUserDefaults] setInteger:highScore.score forKey:@"HighscoreSaved"];
             
       // --- Saves highscore to Parse --- //

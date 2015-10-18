@@ -348,7 +348,7 @@
 		E18D7C1719C3CF5200DDB33A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Robert D'Ippolito";
 				TargetAttributes = {
 					E18D7C1E19C3CF5200DDB33A = {
@@ -496,6 +496,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -562,6 +563,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlyGuy/SlyGuy-Prefix.pch";
 				INFOPLIST_FILE = "SlyGuy/SlyGuy-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wavala.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -583,6 +585,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlyGuy/SlyGuy-Prefix.pch";
 				INFOPLIST_FILE = "SlyGuy/SlyGuy-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wavala.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -606,6 +609,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SlyGuyTests/SlyGuyTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wavala.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -624,6 +628,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlyGuy/SlyGuy-Prefix.pch";
 				INFOPLIST_FILE = "SlyGuyTests/SlyGuyTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wavala.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

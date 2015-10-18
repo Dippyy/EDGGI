@@ -26,7 +26,7 @@
     
     SKLabelNode *highScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     highScoreLabel.name = @"Highscore";
-    highScoreLabel.text = [NSString stringWithFormat:@"%ld",[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
+    highScoreLabel.text = [NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
     highScoreLabel.fontSize = 30;
     highScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     highScoreLabel.position = CGPointMake(+30, -25);
