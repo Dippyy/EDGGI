@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB42E8871B9137920001A614 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8851B9137920001A614 /* Bolts.framework */; };
+		CB42E8881B9137920001A614 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8861B9137920001A614 /* Parse.framework */; };
+		CB42E8921B91380C0001A614 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8891B91380C0001A614 /* AudioToolbox.framework */; };
+		CB42E8931B91380C0001A614 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E88A1B91380C0001A614 /* CFNetwork.framework */; };
+		CB42E8941B91380C0001A614 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E88B1B91380C0001A614 /* CoreLocation.framework */; };
+		CB42E8951B91380C0001A614 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E88C1B91380C0001A614 /* libsqlite3.dylib */; };
+		CB42E8961B91380C0001A614 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E88D1B91380C0001A614 /* libz.dylib */; };
+		CB42E8971B91380C0001A614 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E88E1B91380C0001A614 /* QuartzCore.framework */; };
+		CB42E8981B91380C0001A614 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E88F1B91380C0001A614 /* Security.framework */; };
+		CB42E8991B91380C0001A614 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8901B91380C0001A614 /* StoreKit.framework */; };
+		CB42E89A1B91380C0001A614 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8911B91380C0001A614 /* SystemConfiguration.framework */; };
+		CB42E89D1B9138340001A614 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E89B1B9138340001A614 /* Accounts.framework */; };
+		CB42E89E1B9138340001A614 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E89C1B9138340001A614 /* Social.framework */; };
+		CB42E8A21B9169EC0001A614 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB42E8A11B9169EC0001A614 /* Launch Screen.xib */; };
+		CB42E8AC1B9171D00001A614 /* SGHighScore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB42E8AB1B9171D00001A614 /* SGHighScore.m */; };
+		CB42E8AF1B9222CE0001A614 /* NameInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB42E8AE1B9222CE0001A614 /* NameInputVC.m */; };
+		E122801019CE461100C2441D /* enemy1sprite1.png in Resources */ = {isa = PBXBuildFile; fileRef = E122800F19CE461100C2441D /* enemy1sprite1.png */; };
+		E122801319CE488000C2441D /* SGEnemy2Node.m in Sources */ = {isa = PBXBuildFile; fileRef = E122801219CE488000C2441D /* SGEnemy2Node.m */; };
+		E122801519CE4A4300C2441D /* spyguy2-01.png in Resources */ = {isa = PBXBuildFile; fileRef = E122801419CE4A4300C2441D /* spyguy2-01.png */; };
+		E122801819CE4CB700C2441D /* SGTreasureNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E122801719CE4CB700C2441D /* SGTreasureNode.m */; };
+		E122801B19CE811800C2441D /* SGGameover.m in Sources */ = {isa = PBXBuildFile; fileRef = E122801A19CE811800C2441D /* SGGameover.m */; };
+		E122801E19CF742400C2441D /* HUDNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E122801D19CF742400C2441D /* HUDNode.m */; };
+		E1489A851AA7BA1B000D6882 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1489A831AA7BA1B000D6882 /* explosion.sks */; };
+		E1489A861AA7BA1B000D6882 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E1489A841AA7BA1B000D6882 /* spark.png */; };
+		E16A57C91AA95626001F11B6 /* Nexa Bold1.otf in Resources */ = {isa = PBXBuildFile; fileRef = E16A57C81AA95626001F11B6 /* Nexa Bold1.otf */; };
 		E18D7C2319C3CF5200DDB33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2219C3CF5200DDB33A /* Foundation.framework */; };
 		E18D7C2519C3CF5200DDB33A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2419C3CF5200DDB33A /* CoreGraphics.framework */; };
 		E18D7C2719C3CF5200DDB33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2619C3CF5200DDB33A /* UIKit.framework */; };
@@ -16,7 +41,6 @@
 		E18D7C3519C3CF5200DDB33A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C3419C3CF5200DDB33A /* AppDelegate.m */; };
 		E18D7C3819C3CF5200DDB33A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18D7C3619C3CF5200DDB33A /* Main.storyboard */; };
 		E18D7C3B19C3CF5200DDB33A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C3A19C3CF5200DDB33A /* ViewController.m */; };
-		E18D7C3E19C3CF5200DDB33A /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C3D19C3CF5200DDB33A /* MyScene.m */; };
 		E18D7C4019C3CF5200DDB33A /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E18D7C3F19C3CF5200DDB33A /* Spaceship.png */; };
 		E18D7C4219C3CF5200DDB33A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18D7C4119C3CF5200DDB33A /* Images.xcassets */; };
 		E18D7C4919C3CF5300DDB33A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C4819C3CF5300DDB33A /* XCTest.framework */; };
@@ -24,6 +48,15 @@
 		E18D7C4B19C3CF5300DDB33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2619C3CF5200DDB33A /* UIKit.framework */; };
 		E18D7C5319C3CF5300DDB33A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18D7C5119C3CF5300DDB33A /* InfoPlist.strings */; };
 		E18D7C5519C3CF5300DDB33A /* SlyGuyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C5419C3CF5300DDB33A /* SlyGuyTests.m */; };
+		E18D7C6019C3CFA800DDB33A /* SGTitleScreenScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C5F19C3CFA800DDB33A /* SGTitleScreenScene.m */; };
+		E18D7C6319C3D03200DDB33A /* SGGameplayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C6219C3D03200DDB33A /* SGGameplayScene.m */; };
+		E18D7C6619C3D0BB00DDB33A /* SGPlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C6519C3D0BB00DDB33A /* SGPlayerNode.m */; };
+		E18D7C6919C6984500DDB33A /* SGEnemy1Node.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C6819C6984500DDB33A /* SGEnemy1Node.m */; };
+		E18D7C6D19C69B6900DDB33A /* UTIL.m in Sources */ = {isa = PBXBuildFile; fileRef = E18D7C6C19C69B6900DDB33A /* UTIL.m */; };
+		E1B53D851B1B5E4B0032DB16 /* playAgainButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D841B1B5E4B0032DB16 /* playAgainButton.m */; };
+		E1B53D881B1B6B7E0032DB16 /* SGupgradeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D871B1B6B7E0032DB16 /* SGupgradeButton.m */; };
+		E1B53D8B1B1B6CFF0032DB16 /* SGUpgradeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D8A1B1B6CFF0032DB16 /* SGUpgradeScreen.m */; };
+		E1B53D8E1B1B885F0032DB16 /* SGMysteryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D8D1B1B885F0032DB16 /* SGMysteryNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +70,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB42E8851B9137920001A614 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		CB42E8861B9137920001A614 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		CB42E8891B91380C0001A614 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CB42E88A1B91380C0001A614 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CB42E88B1B91380C0001A614 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CB42E88C1B91380C0001A614 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CB42E88D1B91380C0001A614 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CB42E88E1B91380C0001A614 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CB42E88F1B91380C0001A614 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CB42E8901B91380C0001A614 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CB42E8911B91380C0001A614 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CB42E89B1B9138340001A614 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		CB42E89C1B9138340001A614 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CB42E8A11B9169EC0001A614 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		CB42E8AA1B9171D00001A614 /* SGHighScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHighScore.h; sourceTree = "<group>"; };
+		CB42E8AB1B9171D00001A614 /* SGHighScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHighScore.m; sourceTree = "<group>"; };
+		CB42E8AD1B9222CE0001A614 /* NameInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameInputVC.h; sourceTree = "<group>"; };
+		CB42E8AE1B9222CE0001A614 /* NameInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameInputVC.m; sourceTree = "<group>"; };
+		E122800F19CE461100C2441D /* enemy1sprite1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy1sprite1.png; sourceTree = "<group>"; };
+		E122801119CE488000C2441D /* SGEnemy2Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGEnemy2Node.h; path = ../SGEnemy2Node.h; sourceTree = "<group>"; };
+		E122801219CE488000C2441D /* SGEnemy2Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGEnemy2Node.m; path = ../SGEnemy2Node.m; sourceTree = "<group>"; };
+		E122801419CE4A4300C2441D /* spyguy2-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spyguy2-01.png"; sourceTree = "<group>"; };
+		E122801619CE4CB700C2441D /* SGTreasureNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGTreasureNode.h; path = ../SGTreasureNode.h; sourceTree = "<group>"; };
+		E122801719CE4CB700C2441D /* SGTreasureNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGTreasureNode.m; path = ../SGTreasureNode.m; sourceTree = "<group>"; };
+		E122801919CE811800C2441D /* SGGameover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGGameover.h; path = ../SGGameover.h; sourceTree = "<group>"; };
+		E122801A19CE811800C2441D /* SGGameover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGGameover.m; path = ../SGGameover.m; sourceTree = "<group>"; };
+		E122801C19CF742400C2441D /* HUDNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HUDNode.h; path = ../HUDNode.h; sourceTree = "<group>"; };
+		E122801D19CF742400C2441D /* HUDNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HUDNode.m; path = ../HUDNode.m; sourceTree = "<group>"; };
+		E1489A831AA7BA1B000D6882 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = explosion.sks; path = ../explosion.sks; sourceTree = "<group>"; };
+		E1489A841AA7BA1B000D6882 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
+		E16A57C81AA95626001F11B6 /* Nexa Bold1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold1.otf"; sourceTree = "<group>"; };
 		E18D7C1F19C3CF5200DDB33A /* SlyGuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlyGuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18D7C2219C3CF5200DDB33A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E18D7C2419C3CF5200DDB33A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -51,8 +115,6 @@
 		E18D7C3719C3CF5200DDB33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E18D7C3919C3CF5200DDB33A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E18D7C3A19C3CF5200DDB33A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E18D7C3C19C3CF5200DDB33A /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		E18D7C3D19C3CF5200DDB33A /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
 		E18D7C3F19C3CF5200DDB33A /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		E18D7C4119C3CF5200DDB33A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E18D7C4719C3CF5300DDB33A /* SlyGuyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlyGuyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +122,24 @@
 		E18D7C5019C3CF5300DDB33A /* SlyGuyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SlyGuyTests-Info.plist"; sourceTree = "<group>"; };
 		E18D7C5219C3CF5300DDB33A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E18D7C5419C3CF5300DDB33A /* SlyGuyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlyGuyTests.m; sourceTree = "<group>"; };
+		E18D7C5E19C3CFA800DDB33A /* SGTitleScreenScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGTitleScreenScene.h; path = ../SGTitleScreenScene.h; sourceTree = "<group>"; };
+		E18D7C5F19C3CFA800DDB33A /* SGTitleScreenScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGTitleScreenScene.m; path = ../SGTitleScreenScene.m; sourceTree = "<group>"; };
+		E18D7C6119C3D03200DDB33A /* SGGameplayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGGameplayScene.h; path = ../SGGameplayScene.h; sourceTree = "<group>"; };
+		E18D7C6219C3D03200DDB33A /* SGGameplayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGGameplayScene.m; path = ../SGGameplayScene.m; sourceTree = "<group>"; };
+		E18D7C6419C3D0BB00DDB33A /* SGPlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGPlayerNode.h; path = ../SGPlayerNode.h; sourceTree = "<group>"; };
+		E18D7C6519C3D0BB00DDB33A /* SGPlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGPlayerNode.m; path = ../SGPlayerNode.m; sourceTree = "<group>"; };
+		E18D7C6719C6984500DDB33A /* SGEnemy1Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGEnemy1Node.h; path = ../SGEnemy1Node.h; sourceTree = "<group>"; };
+		E18D7C6819C6984500DDB33A /* SGEnemy1Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGEnemy1Node.m; path = ../SGEnemy1Node.m; sourceTree = "<group>"; };
+		E18D7C6B19C69B6900DDB33A /* UTIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UTIL.h; path = ../UTIL.h; sourceTree = "<group>"; };
+		E18D7C6C19C69B6900DDB33A /* UTIL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UTIL.m; path = ../UTIL.m; sourceTree = "<group>"; };
+		E1B53D831B1B5E4B0032DB16 /* playAgainButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playAgainButton.h; sourceTree = "<group>"; };
+		E1B53D841B1B5E4B0032DB16 /* playAgainButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playAgainButton.m; sourceTree = "<group>"; };
+		E1B53D861B1B6B7E0032DB16 /* SGupgradeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGupgradeButton.h; sourceTree = "<group>"; };
+		E1B53D871B1B6B7E0032DB16 /* SGupgradeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGupgradeButton.m; sourceTree = "<group>"; };
+		E1B53D891B1B6CFF0032DB16 /* SGUpgradeScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGUpgradeScreen.h; sourceTree = "<group>"; };
+		E1B53D8A1B1B6CFF0032DB16 /* SGUpgradeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGUpgradeScreen.m; sourceTree = "<group>"; };
+		E1B53D8C1B1B885F0032DB16 /* SGMysteryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMysteryNode.h; sourceTree = "<group>"; };
+		E1B53D8D1B1B885F0032DB16 /* SGMysteryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMysteryNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +147,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB42E89D1B9138340001A614 /* Accounts.framework in Frameworks */,
+				CB42E89E1B9138340001A614 /* Social.framework in Frameworks */,
+				CB42E8921B91380C0001A614 /* AudioToolbox.framework in Frameworks */,
+				CB42E8931B91380C0001A614 /* CFNetwork.framework in Frameworks */,
+				CB42E8941B91380C0001A614 /* CoreLocation.framework in Frameworks */,
+				CB42E8951B91380C0001A614 /* libsqlite3.dylib in Frameworks */,
+				CB42E8961B91380C0001A614 /* libz.dylib in Frameworks */,
+				CB42E8971B91380C0001A614 /* QuartzCore.framework in Frameworks */,
+				CB42E8981B91380C0001A614 /* Security.framework in Frameworks */,
+				CB42E8991B91380C0001A614 /* StoreKit.framework in Frameworks */,
+				CB42E89A1B91380C0001A614 /* SystemConfiguration.framework in Frameworks */,
 				E18D7C2519C3CF5200DDB33A /* CoreGraphics.framework in Frameworks */,
+				CB42E8871B9137920001A614 /* Bolts.framework in Frameworks */,
 				E18D7C2719C3CF5200DDB33A /* UIKit.framework in Frameworks */,
 				E18D7C2919C3CF5200DDB33A /* SpriteKit.framework in Frameworks */,
+				CB42E8881B9137920001A614 /* Parse.framework in Frameworks */,
 				E18D7C2319C3CF5200DDB33A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +202,19 @@
 		E18D7C2119C3CF5200DDB33A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB42E89B1B9138340001A614 /* Accounts.framework */,
+				CB42E89C1B9138340001A614 /* Social.framework */,
+				CB42E8891B91380C0001A614 /* AudioToolbox.framework */,
+				CB42E88A1B91380C0001A614 /* CFNetwork.framework */,
+				CB42E88B1B91380C0001A614 /* CoreLocation.framework */,
+				CB42E88C1B91380C0001A614 /* libsqlite3.dylib */,
+				CB42E88D1B91380C0001A614 /* libz.dylib */,
+				CB42E88E1B91380C0001A614 /* QuartzCore.framework */,
+				CB42E88F1B91380C0001A614 /* Security.framework */,
+				CB42E8901B91380C0001A614 /* StoreKit.framework */,
+				CB42E8911B91380C0001A614 /* SystemConfiguration.framework */,
+				CB42E8851B9137920001A614 /* Bolts.framework */,
+				CB42E8861B9137920001A614 /* Parse.framework */,
 				E18D7C2219C3CF5200DDB33A /* Foundation.framework */,
 				E18D7C2419C3CF5200DDB33A /* CoreGraphics.framework */,
 				E18D7C2619C3CF5200DDB33A /* UIKit.framework */,
@@ -121,16 +227,42 @@
 		E18D7C2A19C3CF5200DDB33A /* SlyGuy */ = {
 			isa = PBXGroup;
 			children = (
-				E18D7C3319C3CF5200DDB33A /* AppDelegate.h */,
-				E18D7C3419C3CF5200DDB33A /* AppDelegate.m */,
-				E18D7C3619C3CF5200DDB33A /* Main.storyboard */,
-				E18D7C3919C3CF5200DDB33A /* ViewController.h */,
-				E18D7C3A19C3CF5200DDB33A /* ViewController.m */,
-				E18D7C3C19C3CF5200DDB33A /* MyScene.h */,
-				E18D7C3D19C3CF5200DDB33A /* MyScene.m */,
+				E18D7C5E19C3CFA800DDB33A /* SGTitleScreenScene.h */,
+				E18D7C5F19C3CFA800DDB33A /* SGTitleScreenScene.m */,
+				E18D7C6119C3D03200DDB33A /* SGGameplayScene.h */,
+				E18D7C6219C3D03200DDB33A /* SGGameplayScene.m */,
+				E1B53D891B1B6CFF0032DB16 /* SGUpgradeScreen.h */,
+				E1B53D8A1B1B6CFF0032DB16 /* SGUpgradeScreen.m */,
+				CB42E8AA1B9171D00001A614 /* SGHighScore.h */,
+				CB42E8AB1B9171D00001A614 /* SGHighScore.m */,
+				E18D7C6419C3D0BB00DDB33A /* SGPlayerNode.h */,
+				E18D7C6519C3D0BB00DDB33A /* SGPlayerNode.m */,
+				E122801619CE4CB700C2441D /* SGTreasureNode.h */,
+				E122801719CE4CB700C2441D /* SGTreasureNode.m */,
+				E122801119CE488000C2441D /* SGEnemy2Node.h */,
+				E122801219CE488000C2441D /* SGEnemy2Node.m */,
+				E18D7C6719C6984500DDB33A /* SGEnemy1Node.h */,
+				E18D7C6819C6984500DDB33A /* SGEnemy1Node.m */,
+				E1B53D8C1B1B885F0032DB16 /* SGMysteryNode.h */,
+				E1B53D8D1B1B885F0032DB16 /* SGMysteryNode.m */,
+				E122801919CE811800C2441D /* SGGameover.h */,
+				E122801A19CE811800C2441D /* SGGameover.m */,
+				E1B53D831B1B5E4B0032DB16 /* playAgainButton.h */,
+				E1B53D841B1B5E4B0032DB16 /* playAgainButton.m */,
+				E1B53D861B1B6B7E0032DB16 /* SGupgradeButton.h */,
+				E1B53D871B1B6B7E0032DB16 /* SGupgradeButton.m */,
+				E122801C19CF742400C2441D /* HUDNode.h */,
+				E122801D19CF742400C2441D /* HUDNode.m */,
+				E18D7C6B19C69B6900DDB33A /* UTIL.h */,
+				E18D7C6C19C69B6900DDB33A /* UTIL.m */,
+				CB42E8AD1B9222CE0001A614 /* NameInputVC.h */,
+				CB42E8AE1B9222CE0001A614 /* NameInputVC.m */,
 				E18D7C3F19C3CF5200DDB33A /* Spaceship.png */,
+				E122800F19CE461100C2441D /* enemy1sprite1.png */,
+				E122801419CE4A4300C2441D /* spyguy2-01.png */,
 				E18D7C4119C3CF5200DDB33A /* Images.xcassets */,
 				E18D7C2B19C3CF5200DDB33A /* Supporting Files */,
+				CB42E8A11B9169EC0001A614 /* Launch Screen.xib */,
 			);
 			path = SlyGuy;
 			sourceTree = "<group>";
@@ -138,6 +270,14 @@
 		E18D7C2B19C3CF5200DDB33A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E16A57C81AA95626001F11B6 /* Nexa Bold1.otf */,
+				E1489A831AA7BA1B000D6882 /* explosion.sks */,
+				E1489A841AA7BA1B000D6882 /* spark.png */,
+				E18D7C3919C3CF5200DDB33A /* ViewController.h */,
+				E18D7C3A19C3CF5200DDB33A /* ViewController.m */,
+				E18D7C3319C3CF5200DDB33A /* AppDelegate.h */,
+				E18D7C3419C3CF5200DDB33A /* AppDelegate.m */,
+				E18D7C3619C3CF5200DDB33A /* Main.storyboard */,
 				E18D7C2C19C3CF5200DDB33A /* SlyGuy-Info.plist */,
 				E18D7C2D19C3CF5200DDB33A /* InfoPlist.strings */,
 				E18D7C3019C3CF5200DDB33A /* main.m */,
@@ -211,6 +351,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Robert D'Ippolito";
 				TargetAttributes = {
+					E18D7C1E19C3CF5200DDB33A = {
+						DevelopmentTeam = LFX6Q25TT4;
+					};
 					E18D7C4619C3CF5300DDB33A = {
 						TestTargetID = E18D7C1E19C3CF5200DDB33A;
 					};
@@ -240,10 +383,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E122801019CE461100C2441D /* enemy1sprite1.png in Resources */,
 				E18D7C2F19C3CF5200DDB33A /* InfoPlist.strings in Resources */,
 				E18D7C4219C3CF5200DDB33A /* Images.xcassets in Resources */,
 				E18D7C4019C3CF5200DDB33A /* Spaceship.png in Resources */,
+				E16A57C91AA95626001F11B6 /* Nexa Bold1.otf in Resources */,
+				E1489A851AA7BA1B000D6882 /* explosion.sks in Resources */,
+				E1489A861AA7BA1B000D6882 /* spark.png in Resources */,
+				E122801519CE4A4300C2441D /* spyguy2-01.png in Resources */,
 				E18D7C3819C3CF5200DDB33A /* Main.storyboard in Resources */,
+				CB42E8A21B9169EC0001A614 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +411,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E18D7C3E19C3CF5200DDB33A /* MyScene.m in Sources */,
+				E122801319CE488000C2441D /* SGEnemy2Node.m in Sources */,
+				E122801B19CE811800C2441D /* SGGameover.m in Sources */,
+				CB42E8AC1B9171D00001A614 /* SGHighScore.m in Sources */,
+				E18D7C6919C6984500DDB33A /* SGEnemy1Node.m in Sources */,
+				E122801E19CF742400C2441D /* HUDNode.m in Sources */,
+				E1B53D881B1B6B7E0032DB16 /* SGupgradeButton.m in Sources */,
 				E18D7C3B19C3CF5200DDB33A /* ViewController.m in Sources */,
+				E18D7C6019C3CFA800DDB33A /* SGTitleScreenScene.m in Sources */,
+				E1B53D8E1B1B885F0032DB16 /* SGMysteryNode.m in Sources */,
+				E1B53D851B1B5E4B0032DB16 /* playAgainButton.m in Sources */,
+				E1B53D8B1B1B6CFF0032DB16 /* SGUpgradeScreen.m in Sources */,
+				E122801819CE4CB700C2441D /* SGTreasureNode.m in Sources */,
+				E18D7C6619C3D0BB00DDB33A /* SGPlayerNode.m in Sources */,
+				E18D7C6319C3D03200DDB33A /* SGGameplayScene.m in Sources */,
+				CB42E8AF1B9222CE0001A614 /* NameInputVC.m in Sources */,
 				E18D7C3519C3CF5200DDB33A /* AppDelegate.m in Sources */,
 				E18D7C3119C3CF5200DDB33A /* main.m in Sources */,
+				E18D7C6D19C69B6900DDB33A /* UTIL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,10 +553,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlyGuy/SlyGuy-Prefix.pch";
 				INFOPLIST_FILE = "SlyGuy/SlyGuy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -404,10 +574,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlyGuy/SlyGuy-Prefix.pch";
 				INFOPLIST_FILE = "SlyGuy/SlyGuy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -472,6 +649,7 @@
 				E18D7C5A19C3CF5300DDB33A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E18D7C5B19C3CF5300DDB33A /* Build configuration list for PBXNativeTarget "SlyGuyTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +658,7 @@
 				E18D7C5D19C3CF5300DDB33A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

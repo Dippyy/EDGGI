@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "SGTitleScreenScene.h"
 
 @implementation ViewController
 
@@ -16,12 +16,13 @@
     [super viewDidLoad];
 
     // Configure the view.
+    
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SGTitleScreenScene *scene = [SGTitleScreenScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
