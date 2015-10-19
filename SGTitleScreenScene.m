@@ -44,6 +44,7 @@
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+        background.zPosition = 0;
         
         
         if ([currentCharacter  isEqual: @"EDDGI"]) {
@@ -59,10 +60,12 @@
         
         SKSpriteNode *titleImages = [SKSpriteNode spriteNodeWithImageNamed:(homeScreenName)];
         titleImages.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+        titleImages.zPosition = 0;
         titleImages.size =CGSizeMake(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
         
         SKLabelNode *titleScreen = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         titleScreen.name = @"Title";
+        titleScreen.zPosition = 0;
         titleScreen.text = currentCharacter;
         titleScreen.fontSize = 48;
         titleScreen.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/4));
@@ -70,6 +73,7 @@
         
         SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         instructionTitle.name = @"Title";
+        instructionTitle.zPosition = 0;
         instructionTitle.text = @"Click screen to play!";
         instructionTitle.fontSize = 20;
         instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/5));
@@ -77,18 +81,21 @@
         
         SKLabelNode *highscoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highscoreLabel.name = @"HS";
+        highscoreLabel.zPosition = 0;
         highscoreLabel.text =@"HIGHSCORE";
         highscoreLabel.fontSize = 20;
         highscoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/3.5)+30);
         
         SKLabelNode *highScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highScore.name = @"titleHighScore";
+        highscoreLabel.zPosition = 0;
         highScore.fontSize = 30;
         highScore.alpha = 0.7;
         highScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/3.5));
         highScore.text = [NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
         
         SGupgradeButton *upgradeButton = [SGupgradeButton upgradeButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/2)];
+        upgradeButton.zPosition = 0;
         upgradeButton.name = @"upgradeTapped";
         upgradeButton.alpha = 1.0;
 
