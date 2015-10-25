@@ -19,23 +19,11 @@
     [super viewDidLoad];
     
     //Facebook Login Button
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     self.loginButton = [[FBSDKLoginButton alloc] init];
+    self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     self.loginButton.center = self.view.center;
     [self.view addSubview:self.loginButton];
 
-//    // Configure the view.
-//    SKView * skView = (SKView *)self.view;
-//    skView.showsFPS = YES;
-//    skView.showsNodeCount = YES;
-//    
-//    // Create and configure the scene.
-//    SGTitleScreenScene *scene = [SGTitleScreenScene sceneWithSize:skView.bounds.size];
-//    scene.name = @"titleScreen";
-//    scene.scaleMode = SKSceneScaleModeAspectFill;
-//    
-//    // Present the scene
-//    [skView presentScene:scene];
 }
 
 - (IBAction)playForFunTapped:(UIButton *)sender {

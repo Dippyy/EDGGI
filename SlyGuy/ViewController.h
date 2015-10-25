@@ -14,6 +14,8 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *playButtonProperties;
-@property FBSDKLoginButton *loginButton;
+//@property FBSDKLoginButton *loginButton;
+@property (nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+
 
 @end
