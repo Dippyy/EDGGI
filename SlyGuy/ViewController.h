@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface ViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIButton *playButtonProperties;
+@property FBSDKLoginButton *loginButton;
 
 @end

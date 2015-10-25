@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Name InputVC-->
+        <!--View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController id="LVB-YS-i5n" customClass="NameInputVC" sceneMemberID="viewController">
+                <viewController id="LVB-YS-i5n" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TvN-0d-DFh"/>
                         <viewControllerLayoutGuide type="bottom" id="aVg-JY-jeM"/>
@@ -16,11 +17,34 @@
                     <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-Ec-Is2">
+                                <rect key="frame" x="69" y="347" width="183" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Play for Fun!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playForFunTapped:" destination="LVB-YS-i5n" eventType="touchUpInside" id="cTX-sh-dZ6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="centerX" secondItem="bdc-N1-crn" secondAttribute="centerX" id="5hh-gK-BeL"/>
+                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="yeU-Ec-Is2" secondAttribute="bottom" constant="191" id="QYD-Eu-Aep"/>
+                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" constant="347" id="ZSp-6A-UAa"/>
+                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="53" id="bm9-Zq-Tzj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playButtonProperties" destination="yeU-Ec-Is2" id="XPd-Zc-0Wq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="202"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

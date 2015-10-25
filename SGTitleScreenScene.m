@@ -12,7 +12,10 @@
 #import "SGupgradeButton.h"
 #import "SGHighScore.h"
 #import "HUDNode.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "UTIL.h"
+
 #import <Parse/Parse.h>
 
 
@@ -55,9 +58,6 @@
             homeScreenName = @"homescreen3";
         }
         
-   
-            
-        
         SKSpriteNode *titleImages = [SKSpriteNode spriteNodeWithImageNamed:(homeScreenName)];
         titleImages.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         titleImages.zPosition = 0;
@@ -99,7 +99,6 @@
         upgradeButton.name = @"upgradeTapped";
         upgradeButton.alpha = 1.0;
 
-        
         [self addChild:background];
         [self addChild:titleImages];
         [self addChild:titleScreen];
@@ -114,8 +113,12 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     SGGameplayScene *gamePlayScene = [SGGameplayScene sceneWithSize:self.frame.size];
+    gamePlayScene.name = @"gameScreen";
     SKTransition *transition = [SKTransition fadeWithDuration:1.0];
+
+    
     [self.view presentScene:gamePlayScene transition:transition];
+
     
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
