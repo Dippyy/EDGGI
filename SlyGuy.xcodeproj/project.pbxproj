@@ -57,6 +57,9 @@
 		E1B53D881B1B6B7E0032DB16 /* SGupgradeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D871B1B6B7E0032DB16 /* SGupgradeButton.m */; };
 		E1B53D8B1B1B6CFF0032DB16 /* SGUpgradeScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D8A1B1B6CFF0032DB16 /* SGUpgradeScreen.m */; };
 		E1B53D8E1B1B885F0032DB16 /* SGMysteryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E1B53D8D1B1B885F0032DB16 /* SGMysteryNode.m */; };
+		E1E6898B1BDD26D600CAA2B0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E6898A1BDD26D600CAA2B0 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
+		E1E6898D1BDD29EA00CAA2B0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E6898C1BDD29EA00CAA2B0 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		E1E6898F1BDD29F500CAA2B0 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E6898E1BDD29F500CAA2B0 /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		E1B53D8A1B1B6CFF0032DB16 /* SGUpgradeScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGUpgradeScreen.m; sourceTree = "<group>"; };
 		E1B53D8C1B1B885F0032DB16 /* SGMysteryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMysteryNode.h; sourceTree = "<group>"; };
 		E1B53D8D1B1B885F0032DB16 /* SGMysteryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMysteryNode.m; sourceTree = "<group>"; };
+		E1E6898A1BDD26D600CAA2B0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		E1E6898C1BDD29EA00CAA2B0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../FacebookSDK/FacebookSDKs-iOS-20151007/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		E1E6898E1BDD29F500CAA2B0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../FacebookSDK/FacebookSDKs-iOS-20151007/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,11 +160,14 @@
 				CB42E8941B91380C0001A614 /* CoreLocation.framework in Frameworks */,
 				CB42E8951B91380C0001A614 /* libsqlite3.dylib in Frameworks */,
 				CB42E8961B91380C0001A614 /* libz.dylib in Frameworks */,
+				E1E6898B1BDD26D600CAA2B0 /* FBSDKCoreKit.framework in Frameworks */,
 				CB42E8971B91380C0001A614 /* QuartzCore.framework in Frameworks */,
 				CB42E8981B91380C0001A614 /* Security.framework in Frameworks */,
 				CB42E8991B91380C0001A614 /* StoreKit.framework in Frameworks */,
 				CB42E89A1B91380C0001A614 /* SystemConfiguration.framework in Frameworks */,
+				E1E6898F1BDD29F500CAA2B0 /* FBSDKShareKit.framework in Frameworks */,
 				E18D7C2519C3CF5200DDB33A /* CoreGraphics.framework in Frameworks */,
+				E1E6898D1BDD29EA00CAA2B0 /* FBSDKLoginKit.framework in Frameworks */,
 				CB42E8871B9137920001A614 /* Bolts.framework in Frameworks */,
 				E18D7C2719C3CF5200DDB33A /* UIKit.framework in Frameworks */,
 				E18D7C2919C3CF5200DDB33A /* SpriteKit.framework in Frameworks */,
@@ -202,6 +211,9 @@
 		E18D7C2119C3CF5200DDB33A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1E6898E1BDD29F500CAA2B0 /* FBSDKShareKit.framework */,
+				E1E6898C1BDD29EA00CAA2B0 /* FBSDKLoginKit.framework */,
+				E1E6898A1BDD26D600CAA2B0 /* FBSDKCoreKit.framework */,
 				CB42E89B1B9138340001A614 /* Accounts.framework */,
 				CB42E89C1B9138340001A614 /* Social.framework */,
 				CB42E8891B91380C0001A614 /* AudioToolbox.framework */,
