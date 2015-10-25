@@ -23,10 +23,32 @@
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     self.loginButton.center = self.view.center;
     [self.view addSubview:self.loginButton];
-
+    
 }
 
-- (IBAction)playForFunTapped:(UIButton *)sender {
+-(void) viewDidAppear:(BOOL)animated {
+    
+    if([FBSDKAccessToken currentAccessToken] == nil){
+        NSLog(@"Not logged in...");
+    } else {
+        NSLog(@"Logged in...");
+        
+        if ([FBSDKAccessToken currentAccessToken]) {
+            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     NSLog(@"fetched user:%@", result);
+                 }
+             }];
+        }
+        self.loginButton.hidden = TRUE;
+        self.playButtonProperties.hidden = true;
+        [self prepareScene];
+    }
+    
+}
+
+-(void)prepareScene{
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;
@@ -38,11 +60,16 @@
     scene.name = @"titleScreen";
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
-    self.playButtonProperties.hidden = TRUE;
-    self.loginButton.hidden = TRUE;
-
     // Present the scene
     [skView presentScene:scene];
+}
+
+- (IBAction)playForFunTapped:(UIButton *)sender {
+    
+    self.playButtonProperties.hidden = TRUE;
+    self.loginButton.hidden = TRUE;
+    
+    [self prepareScene];
 }
 
 
@@ -64,6 +91,8 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+    
+    
 }
 
 @end

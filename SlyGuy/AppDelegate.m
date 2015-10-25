@@ -22,6 +22,7 @@
     [Parse setApplicationId:@"lg2ydgJjxmPwmZSqED4gWbcAU7Zrzp8uAskFEiPI"
                   clientKey:@"3N48FckgZdGbvklGbBVXBLs2CETaqfFD4aEhoc8X"];
     
+        
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
@@ -34,7 +35,6 @@
     // Override point for customization after application launch.
     return YES;
 }
-
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

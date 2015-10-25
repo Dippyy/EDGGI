@@ -58,12 +58,6 @@
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         [self addChild:background];
         
-        NSUserDefaults *sceneChecker  = [NSUserDefaults standardUserDefaults];
-        [sceneChecker setInteger:2 forKey:@"Current Scene"];
-        [sceneChecker synchronize];
-        NSInteger sceneCheck = [sceneChecker integerForKey:@"Current Scene"];
-        NSLog(@"The integer value is %d", sceneCheck);
-        
         self.highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"];
         
         self.physicsWorld.contactDelegate = self;
