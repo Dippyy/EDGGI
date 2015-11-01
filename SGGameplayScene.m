@@ -401,11 +401,28 @@
             
       // --- Saves highscore to Parse --- //
             
-            PFObject *parseHighScore = [PFObject objectWithClassName:@"Highscore"];
-            NSString *tempString = [[NSUserDefaults standardUserDefaults] objectForKey:@"gamerName"];
-            parseHighScore[@"Name"] = tempString;
-            parseHighScore[@"scoreValue"] = @(highScore.score);
-            [parseHighScore saveInBackground];
+            NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
+
+            PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
+            [query whereKey:@"userId" equalTo:userID];
+            [query getFirstObjectInBackgroundWithBlock:^(PFObject * userStats, NSError *error) {
+                if (!error) {
+                    // Found UserStats
+                    [userStats setObject:@(highScore.score) forKey:@"scoreValue"];
+                    // Save
+                    [userStats saveInBackground];
+                } else {
+                    // Did not find any UserStats for the current user
+                    NSLog(@"Error: %@", error);
+                }
+            }];
+            
+//            PFObject *parseHighScore = [PFObject objectWithClassName:@"Highscore"];
+//            NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
+//            NSLog(@"this is the user ID that it is being saved to %@", userID);
+//            parseHighScore[@"userId"] = userID;
+//            parseHighScore[@"scoreValue"] = @(highScore.score);
+//            [parseHighScore saveInBackground];
         }
         
     }

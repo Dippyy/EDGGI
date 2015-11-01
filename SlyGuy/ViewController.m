@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SGTitleScreenScene.h"
 #import "SGGameplayScene.h"
+#import <Parse/Parse.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
@@ -37,7 +38,45 @@
             [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
              startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                  if (!error) {
-                     NSLog(@"fetched user:%@", result);
+                     
+                     NSLog(@"feched name: %@", result[@"name"]);
+                     NSLog(@"fetched userid: %@", result[@"id"]);
+                     
+                     PFQuery *query = [PFUser query];
+                     [query whereKey:@"Name" equalTo: result[@"name"]];
+                     if([query countObjectsInBackground] > 0) {
+                         
+                         NSLog(@"match found!");
+                         
+                         PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
+                         [query whereKey:@"userId" equalTo: result[@"id"]];
+                         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                             if (!error) {
+                                 NSLog(@"Successfully retrieved %d scores.", objects.count);
+                                 for (PFObject *object in objects) {
+                                     NSLog(@"%@", object[@"scoreValue"]);
+                                     NSUserDefaults *scoreValue = [NSUserDefaults standardUserDefaults];
+                                     [scoreValue setObject: object[@"scoreValue"] forKey:@"HighscoreSaved"];
+                                     [scoreValue setObject:object[@"userId"] forKey:@"userID"];
+                                     [scoreValue synchronize];
+                                 }
+                             } else {
+                                 // Log details of the failure
+                                 NSLog(@"Error: %@ %@", error, [error userInfo]);
+                             }
+                         }];
+                         
+                     } else {
+                         
+                        PFObject *userScore = [PFObject objectWithClassName:@"Highscore"];
+                         [userScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                             if (succeeded) {
+                                 NSLog(@"Object has been saved");
+                             } else {
+                                 NSLog(@"Object was not saved");
+                             }
+                         }];
+                     }
                  }
              }];
         }
