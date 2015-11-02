@@ -42,9 +42,12 @@
                      NSLog(@"feched name: %@", result[@"name"]);
                      NSLog(@"fetched userid: %@", result[@"id"]);
                      
-                     PFQuery *query = [PFUser query];
-                     [query whereKey:@"Name" equalTo: result[@"name"]];
-                     if([query countObjectsInBackground] > 0) {
+                     PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
+//                     PFQuery *query = [PFUser query];
+                     [query whereKey:@"userId" equalTo: result[@"id"]];
+                     NSLog(@"Number of things found is %ld", (long)[query getFirstObject]);
+
+                     if([query getFirstObject] > 0) {
                          
                          NSLog(@"match found!");
                          
@@ -68,8 +71,16 @@
                          
                      } else {
                          
-                        PFObject *userScore = [PFObject objectWithClassName:@"Highscore"];
-                         [userScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+
+                        PFObject *newUser = [PFObject objectWithClassName:@"Highscore"];
+                         newUser[@"Name"] = result[@"name"];
+                         newUser[@"userId"] = result[@"id"];
+                         newUser[@"scoreValue"] = @(0);
+                         NSUserDefaults *initialScore = [NSUserDefaults standardUserDefaults];
+                         [initialScore setObject:@(0) forKey:@"HighScoreSaved"];
+                         [initialScore synchronize];
+                         
+                         [newUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                              if (succeeded) {
                                  NSLog(@"Object has been saved");
                              } else {

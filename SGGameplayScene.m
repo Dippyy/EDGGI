@@ -416,13 +416,7 @@
                     NSLog(@"Error: %@", error);
                 }
             }];
-            
-//            PFObject *parseHighScore = [PFObject objectWithClassName:@"Highscore"];
-//            NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
-//            NSLog(@"this is the user ID that it is being saved to %@", userID);
-//            parseHighScore[@"userId"] = userID;
-//            parseHighScore[@"scoreValue"] = @(highScore.score);
-//            [parseHighScore saveInBackground];
+        
         }
         
     }
