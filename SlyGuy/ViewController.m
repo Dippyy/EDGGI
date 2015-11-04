@@ -29,9 +29,12 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     
+    //Checks for a Facebook login token (determines if user has logged in before)
+    
     if([FBSDKAccessToken currentAccessToken] == nil){
         NSLog(@"Not logged in...");
     } else {
+        //If the user is logged in we want to grab their information (name and unique fb id)
         NSLog(@"Logged in...");
         
         if ([FBSDKAccessToken currentAccessToken]) {
@@ -39,18 +42,21 @@
              startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                  if (!error) {
                      
+                     //print the user information to the console (for testing)
                      NSLog(@"feched name: %@", result[@"name"]);
                      NSLog(@"fetched userid: %@", result[@"id"]);
                      
+                     //check to see if we have this user in our Parse db
                      PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
-//                     PFQuery *query = [PFUser query];
                      [query whereKey:@"userId" equalTo: result[@"id"]];
                      NSLog(@"Number of things found is %ld", (long)[query getFirstObject]);
-
+                     
+                     //if the query returns more then 1 object this means we have a record of this user
                      if([query getFirstObject] > 0) {
                          
                          NSLog(@"match found!");
                          
+                         //once we know we have this user in our db we want to retrieve their highscore
                          PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
                          [query whereKey:@"userId" equalTo: result[@"id"]];
                          [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -58,6 +64,8 @@
                                  NSLog(@"Successfully retrieved %d scores.", objects.count);
                                  for (PFObject *object in objects) {
                                      NSLog(@"%@", object[@"scoreValue"]);
+                                     
+                                     //this code saves the score and the userID for reference
                                      NSUserDefaults *scoreValue = [NSUserDefaults standardUserDefaults];
                                      [scoreValue setObject: object[@"scoreValue"] forKey:@"HighscoreSaved"];
                                      [scoreValue setObject:object[@"userId"] forKey:@"userID"];
@@ -71,15 +79,20 @@
                          
                      } else {
                          
-
+                         //This is the case where the user is logging in for the first time
+                         //we want to save all of their information to the db
                         PFObject *newUser = [PFObject objectWithClassName:@"Highscore"];
                          newUser[@"Name"] = result[@"name"];
                          newUser[@"userId"] = result[@"id"];
                          newUser[@"scoreValue"] = @(0);
+                         
+                         //this code saves the score and the userID for reference (same as above)
                          NSUserDefaults *initialScore = [NSUserDefaults standardUserDefaults];
                          [initialScore setObject:@(0) forKey:@"HighScoreSaved"];
+                         [initialScore setObject:result[@"id"] forKey:@"userID"];
                          [initialScore synchronize];
-                         
+                    
+                         //this command is what actually saves the code
                          [newUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                              if (succeeded) {
                                  NSLog(@"Object has been saved");

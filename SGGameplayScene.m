@@ -401,7 +401,7 @@
             
       // --- Saves highscore to Parse --- //
             
-            NSString *userID = [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
+            NSString *userID = [[NSUserDefaults standardUserDefaults] valueForKey:@"userID"];
 
             PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
             [query whereKey:@"userId" equalTo:userID];
