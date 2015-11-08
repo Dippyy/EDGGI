@@ -33,6 +33,11 @@
     
     if([FBSDKAccessToken currentAccessToken] == nil){
         NSLog(@"Not logged in...");
+        
+        //this code saves the score and the userID for reference (same as above)
+        NSUserDefaults *initialScore = [NSUserDefaults standardUserDefaults];
+        [initialScore setObject:@(0) forKey:@"HighScoreSaved"];
+        
     } else {
         //If the user is logged in we want to grab their information (name and unique fb id)
         NSLog(@"Logged in...");
@@ -61,7 +66,7 @@
                          [query whereKey:@"userId" equalTo: result[@"id"]];
                          [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                              if (!error) {
-                                 NSLog(@"Successfully retrieved %d scores.", objects.count);
+                                 NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
                                  for (PFObject *object in objects) {
                                      NSLog(@"%@", object[@"scoreValue"]);
                                      
