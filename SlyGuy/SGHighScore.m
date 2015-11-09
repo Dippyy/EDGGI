@@ -20,7 +20,7 @@
         
       //  NSInteger highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"];
         
-       [[NSUserDefaults standardUserDefaults] setObject:@"Alexx" forKey:@"gamerName"];
+//       [[NSUserDefaults standardUserDefaults] setObject:@"Alexx" forKey:@"gamerName"];
         
         NSArray *colorArray = [[NSArray alloc] initWithObjects:
                                [UIColor colorWithRed:90/255.0 green:187/255.0 blue:181/255.0 alpha:1.0],
@@ -48,38 +48,31 @@
         
         SKLabelNode *playerName = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         playerName.name = @"playerName";
-        playerName.text = @"Default";
-     
+        
         playerName.fontSize = 25;
         playerName.alpha = 0.8;
         playerName.position = CGPointMake(CGRectGetMidX(self.frame)*4/3, CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
         [self addChild:playerName];
         
+        NSUserDefaults *playerNameDisplay = [NSUserDefaults standardUserDefaults];
+        NSString *sampleName = [playerNameDisplay valueForKey:@"PlayerFirstName"];
         
         SKLabelNode *playerNameText = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         playerNameText.name = @"playerName";
-        playerNameText.text = @"Your Name: ";
+        playerNameText.text = sampleName;
         playerNameText.fontSize = 25;
         playerNameText.alpha = 0.8;
-        playerNameText.position = CGPointMake(CGRectGetMidX(self.frame)*2/3, CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
+        playerNameText.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
         [self addChild:playerNameText];
 
         //Highscore
-        
-        SKLabelNode *highScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
-        highScore.name = @"HighScore";
-        highScore.fontSize = 25;
-        highScore.alpha = 0.7;
-        highScore.position = CGPointMake(CGRectGetMidX(self.frame)*2/3, CGRectGetMidY(self.frame)+1*(CGRectGetMidY(self.frame)/3.5));
-        highScore.text = @"Your High Score:";
-        [self addChild:highScore];
         
         SKLabelNode *titlehighScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         titlehighScore.name = @"titleHighScore";
         titlehighScore.fontSize = 25;
         titlehighScore.alpha = 0.7;
-        titlehighScore.position = CGPointMake(CGRectGetMidX(self.frame)*4/3, CGRectGetMidY(self.frame)+1*(CGRectGetMidY(self.frame)/3.5));
-        titlehighScore.text = [NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
+        titlehighScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+1*(CGRectGetMidY(self.frame)/3.5));
+        titlehighScore.text = [NSString stringWithFormat:@"Your High Score: %ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
         [self addChild:titlehighScore];
         
         //Edit Name of Player
@@ -93,18 +86,18 @@
         
         // ---------- //
         
-        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width/2, self.size.height/2+20, 200, 40)];
-        textField.center = self.view.center;
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.textColor = [UIColor blackColor];
-        textField.font = [UIFont systemFontOfSize:17.0];
-        textField.placeholder = @"Enter your name here";
-        textField.backgroundColor = [UIColor whiteColor];
-        textField.autocorrectionType = UITextAutocorrectionTypeYes;
-        textField.keyboardType = UIKeyboardTypeDefault;
-        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        textField.delegate = self.delegate;
-        [self.view addSubview:textField];
+//        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width/2, self.size.height/2+20, 200, 40)];
+//        textField.center = self.view.center;
+//        textField.borderStyle = UITextBorderStyleRoundedRect;
+//        textField.textColor = [UIColor blackColor];
+//        textField.font = [UIFont systemFontOfSize:17.0];
+//        textField.placeholder = @"Enter your name here";
+//        textField.backgroundColor = [UIColor whiteColor];
+//        textField.autocorrectionType = UITextAutocorrectionTypeYes;
+//        textField.keyboardType = UIKeyboardTypeDefault;
+//        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//        textField.delegate = self.delegate;
+//        [self.view addSubview:textField];
         
         // ------------ //
         
@@ -113,15 +106,14 @@
 
         PFQuery *queryHighScore = [PFQuery queryWithClassName:@"Highscore"];
         [queryHighScore selectKeys:@[@"Name",@"scoreValue"]];
-        [queryHighScore whereKey:@"scoreValue" greaterThan:@50];
+         queryHighScore.limit = 5;
         [queryHighScore orderByDescending:@"scoreValue"];
 
         [queryHighScore findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             
                 int counter = 0;
                 for (PFObject *object in objects) {
-//                    [topRankedPlayers addObject:[object objectForKey:@"Name"]];
-//                    [topRankedPlayers addObject:[object objectForKey:@"scoreValue"]];
+
                     counter = counter + 1 ;
                     NSString *counterString = [NSString stringWithFormat:@"%i", counter];
                     
@@ -132,7 +124,9 @@
                     [self addChild:Rank];
                     
                     SKLabelNode *Name = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
-                    Name.text = [object objectForKey:@"Name"];
+                    NSString *fullName = [object objectForKey:@"Name"];
+                    NSArray *firstName = [fullName componentsSeparatedByString:@" "];
+                    Name.text = firstName[0];
                     Name.fontSize = 20;
                     Name.position = CGPointMake(CGRectGetMidX(self.frame)*8/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
                     [self addChild:Name];

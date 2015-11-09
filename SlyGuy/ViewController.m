@@ -22,7 +22,9 @@
     //Facebook Login Button
     self.loginButton = [[FBSDKLoginButton alloc] init];
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    self.loginButton.center = self.view.center;
+    self.loginButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - self.loginButton.frame.size.height);
+
+    //    self.loginButton.center = self.view.center;
     [self.view addSubview:self.loginButton];
     
 }
@@ -50,6 +52,9 @@
                      //print the user information to the console (for testing)
                      NSLog(@"feched name: %@", result[@"name"]);
                      NSLog(@"fetched userid: %@", result[@"id"]);
+                     NSString *myName = result[@"name"];
+                     NSArray *firstName = [myName componentsSeparatedByString:@" "];
+                     NSLog(@"fetched userid: %@", firstName[0]);
                      
                      //check to see if we have this user in our Parse db
                      PFQuery *query = [PFQuery queryWithClassName:@"Highscore"];
@@ -72,6 +77,8 @@
                                      
                                      //this code saves the score and the userID for reference
                                      NSUserDefaults *scoreValue = [NSUserDefaults standardUserDefaults];
+                                     [scoreValue setObject:object[@"Name"] forKey:@"PlayerName"];
+                                     [scoreValue setObject:firstName[0] forKey:@"PlayerFirstName"];
                                      [scoreValue setObject: object[@"scoreValue"] forKey:@"HighscoreSaved"];
                                      [scoreValue setObject:object[@"userId"] forKey:@"userID"];
                                      [scoreValue synchronize];
@@ -109,7 +116,7 @@
                  }
              }];
         }
-        self.loginButton.hidden = TRUE;
+        self.loginButton.hidden = FALSE;
         self.playButtonProperties.hidden = true;
         [self prepareScene];
     }

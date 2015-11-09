@@ -32,7 +32,6 @@
 		E1489A851AA7BA1B000D6882 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1489A831AA7BA1B000D6882 /* explosion.sks */; };
 		E1489A861AA7BA1B000D6882 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E1489A841AA7BA1B000D6882 /* spark.png */; };
 		E16A57C91AA95626001F11B6 /* Nexa Bold1.otf in Resources */ = {isa = PBXBuildFile; fileRef = E16A57C81AA95626001F11B6 /* Nexa Bold1.otf */; };
-		E18C332F1BEFF537006ACBF0 /* HighScoreTable.m in Sources */ = {isa = PBXBuildFile; fileRef = E18C332E1BEFF537006ACBF0 /* HighScoreTable.m */; };
 		E18D7C2319C3CF5200DDB33A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2219C3CF5200DDB33A /* Foundation.framework */; };
 		E18D7C2519C3CF5200DDB33A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2419C3CF5200DDB33A /* CoreGraphics.framework */; };
 		E18D7C2719C3CF5200DDB33A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18D7C2619C3CF5200DDB33A /* UIKit.framework */; };
@@ -105,8 +104,6 @@
 		E1489A831AA7BA1B000D6882 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = explosion.sks; path = ../explosion.sks; sourceTree = "<group>"; };
 		E1489A841AA7BA1B000D6882 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = ../spark.png; sourceTree = "<group>"; };
 		E16A57C81AA95626001F11B6 /* Nexa Bold1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold1.otf"; sourceTree = "<group>"; };
-		E18C332D1BEFF537006ACBF0 /* HighScoreTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreTable.h; sourceTree = "<group>"; };
-		E18C332E1BEFF537006ACBF0 /* HighScoreTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreTable.m; sourceTree = "<group>"; };
 		E18D7C1F19C3CF5200DDB33A /* SlyGuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlyGuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18D7C2219C3CF5200DDB33A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E18D7C2419C3CF5200DDB33A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -290,8 +287,6 @@
 				E1489A841AA7BA1B000D6882 /* spark.png */,
 				E18D7C3919C3CF5200DDB33A /* ViewController.h */,
 				E18D7C3A19C3CF5200DDB33A /* ViewController.m */,
-				E18C332D1BEFF537006ACBF0 /* HighScoreTable.h */,
-				E18C332E1BEFF537006ACBF0 /* HighScoreTable.m */,
 				E18D7C3319C3CF5200DDB33A /* AppDelegate.h */,
 				E18D7C3419C3CF5200DDB33A /* AppDelegate.m */,
 				E18D7C3619C3CF5200DDB33A /* Main.storyboard */,
@@ -430,7 +425,6 @@
 			files = (
 				E122801319CE488000C2441D /* SGEnemy2Node.m in Sources */,
 				E122801B19CE811800C2441D /* SGGameover.m in Sources */,
-				E18C332F1BEFF537006ACBF0 /* HighScoreTable.m in Sources */,
 				CB42E8AC1B9171D00001A614 /* SGHighScore.m in Sources */,
 				E18D7C6919C6984500DDB33A /* SGEnemy1Node.m in Sources */,
 				E122801E19CF742400C2441D /* HUDNode.m in Sources */,
