@@ -12,6 +12,8 @@
 #import "SGupgradeButton.h"
 #import "SGHighScore.h"
 #import "HUDNode.h"
+#import "ViewController.h"
+#import "FacebookShare.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "UTIL.h"
@@ -82,23 +84,36 @@
         SKLabelNode *highscoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highscoreLabel.name = @"HS";
         highscoreLabel.zPosition = 0;
-        highscoreLabel.text =@"HIGHSCORE";
+        highscoreLabel.text = @"HIGHSCORE";
         highscoreLabel.fontSize = 20;
-        highscoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/3.5)+30);
+        highscoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/4.75));
         
         SKLabelNode *highScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highScore.name = @"titleHighScore";
-        highscoreLabel.zPosition = 0;
+        highScore.zPosition = 0;
         highScore.fontSize = 30;
         highScore.alpha = 0.7;
-        highScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/3.5));
+        highScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/4));
         highScore.text = [NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"]];
-
         
-        SGupgradeButton *upgradeButton = [SGupgradeButton upgradeButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/2)];
-        upgradeButton.zPosition = 0;
+        SKLabelNode *loginWithFB = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
+        loginWithFB.name = @"LoginWithFB";
+        loginWithFB.text = @"Go Back";
+        loginWithFB.zPosition = 0;
+        loginWithFB.fontSize = 30;
+        loginWithFB.alpha = 1.0;
+        loginWithFB.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-2.5*(CGRectGetMidY(self.frame)/2.75));
+
+        SKLabelNode *upgradeButton = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         upgradeButton.name = @"upgradeTapped";
-        upgradeButton.alpha = 1.0;
+        upgradeButton.zPosition = 0;
+        upgradeButton.text =@"Upgrade";
+        upgradeButton.fontSize = 30;
+        upgradeButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/1.5);
+//        SGupgradeButton *upgradeButton = [SGupgradeButton upgradeButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/2)];
+//        upgradeButton.zPosition = 0;
+//        upgradeButton.name = @"upgradeTapped";
+//        upgradeButton.alpha = 1.0;
 
         [self addChild:background];
         [self addChild:titleImages];
@@ -107,6 +122,7 @@
         [self addChild:highScore];
         [self addChild:upgradeButton];
         [self addChild:highscoreLabel];
+        [self addChild:loginWithFB];
     }
     return  self;
 }
@@ -129,6 +145,26 @@
         SGUpgradeScreen *upgradeScene = [SGUpgradeScreen sceneWithSize:self.frame.size];
         SKTransition *transition = [SKTransition fadeWithDuration:1.0];
         [self.view presentScene:upgradeScene transition:transition];
+    }
+    
+    if([node.name isEqualToString:@"LoginWithFB"]){
+        
+        NSLog(@"I AM GOING BACK");
+        [self.view presentScene:nil];
+        NSUserDefaults *loginToken = [NSUserDefaults standardUserDefaults];
+        [loginToken setObject:@"Scenario2" forKey:@"AccessToken"];
+        
+        //SET TOKEN TO RUN A FUNCTION IN VIEWCONTROLLER
+        
+//        [self.view presentScene:nil];
+//        
+//        FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//        loginButton.hidden = false;
+
+        
+//        FacebookShare *newVC = [[FacebookShare alloc] init];
+//        UIViewController *vc = self.view.window.rootViewController;
+//        [vc presentViewController:newVC animated: YES completion:nil];
     }
     
     if([node.name isEqualToString:@"HS"]){

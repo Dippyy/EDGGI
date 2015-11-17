@@ -15,6 +15,8 @@
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -29,9 +31,25 @@
     
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    NSUserDefaults *loginToken = [NSUserDefaults standardUserDefaults];
+    NSString *tokenValue = [loginToken valueForKey:@"AccessToken"];
+    
+    if([tokenValue  isEqual: @"Scenario2"]){
+        NSLog(@"BUM");
+        self.loginButton.hidden = FALSE;
+        self.playButtonProperties.hidden = FALSE;
+        [loginToken setObject:@"Scenario1" forKey:@"AccessToken"];
+
+    }
+}
+
+
 -(void) viewDidAppear:(BOOL)animated {
     
     //Checks for a Facebook login token (determines if user has logged in before)
+    
     
     if([FBSDKAccessToken currentAccessToken] == nil){
         NSLog(@"Not logged in...");
@@ -116,9 +134,11 @@
                  }
              }];
         }
-        self.loginButton.hidden = FALSE;
+        
+        self.loginButton.hidden = TRUE;
         self.playButtonProperties.hidden = true;
         [self prepareScene];
+        
     }
     
 }
@@ -144,6 +164,9 @@
     self.playButtonProperties.hidden = TRUE;
     self.loginButton.hidden = TRUE;
     
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
     [self prepareScene];
 }
 
@@ -161,6 +184,8 @@
         return UIInterfaceOrientationMaskAll;
     }
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
