@@ -233,8 +233,6 @@
         [self.view presentScene:scene transition:transition];
     
     }
-    
-    
  
 }
 
@@ -392,8 +390,6 @@
         
         
         HUDNode *highScore = (HUDNode *)[self childNodeWithName:@"Hud"];
-        
-// [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"HighscoreSaved"];  //This sets the highscore to zero for testing purposes
 
         if(highScore.score > self.highScoreNumber){
             NSLog(@"score is %ld and highscore is %ld",(long)highScore.score, (long)highScore.highScore);
@@ -437,27 +433,15 @@
 }
 
 -(void) performGameOver{
-
-    SKSpriteNode *gameOverDisplay = [SKSpriteNode spriteNodeWithColor:[UIColor grayColor] size:CGSizeMake(self.frame.size.width*0.9, self.frame.size.height*0.7)];
+    
+    SKSpriteNode *gameOverDisplay = [SKSpriteNode spriteNodeWithImageNamed:@"EDDGI GameOver"];
+    gameOverDisplay.size = CGSizeMake(self.frame.size.width*0.9, self.frame.size.height*0.7);
     gameOverDisplay.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
     gameOverDisplay.alpha = 0.8;
     [self addChild:gameOverDisplay];
-    SKAction *fadeIn = [SKAction fadeInWithDuration:0.5];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:0.1];
     
     [gameOverDisplay runAction:fadeIn];
-    
-//    playAgainButton *playAgain = [playAgainButton playAgainButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*1.2)];
-//    [self addChild:playAgain];
-//    
-//    
-//    [playAgain runAction:fadeIn];
-//    
-//    SGupgradeButton *upgradeButton = [SGupgradeButton upgradeButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
-//    [self addChild:upgradeButton];
-//    
-//   [upgradeButton runAction:fadeIn];
-
-    
     
     SGGameover *gameOver = [SGGameover gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*1.4)];
     gameOver.alpha=0.0;
@@ -508,7 +492,6 @@
     [explosion runAction:[SKAction waitForDuration:1.0] completion:^{
         [explosion removeFromParent];
     }];
-    
     
 }
 

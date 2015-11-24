@@ -12,8 +12,6 @@
 
 +(instancetype) upgradeButtonPosition: (CGPoint) position{
     
-  //  SGupgradeButton *buttonTapped = [self spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100.0, 50.0)];
-    
     SGupgradeButton *buttonTapped = [self spriteNodeWithImageNamed:(@"Upgrade")];
     buttonTapped.size = CGSizeMake(100.0, 30.0);
 

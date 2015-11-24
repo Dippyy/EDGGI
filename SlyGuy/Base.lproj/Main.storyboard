@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,11 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-Ec-Is2">
-                                <rect key="frame" x="69" y="347" width="183" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <state key="normal" title="Play for Fun!">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EDDGI Background" translatesAutoresizingMaskIntoConstraints="NO" id="x85-fM-Miq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.39360278707864105" green="1" blue="0.9807049214264828" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3G-LK-X97">
+                                <rect key="frame" x="73" y="337" width="175" height="34"/>
+                                <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="03f-K7-OZx"/>
+                                    <constraint firstAttribute="width" constant="175" id="FPz-a5-8Pr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackButtonTapped:" destination="LVB-YS-i5n" eventType="touchUpInside" id="D5m-YC-6jV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-Ec-Is2">
+                                <rect key="frame" x="73" y="299" width="175" height="30"/>
+                                <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="Swf-dF-O4Y"/>
+                                    <constraint firstAttribute="height" constant="30" id="rF7-o2-L9B"/>
+                                </constraints>
+                                <state key="normal" title="Play for Fun">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -32,13 +53,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="centerX" secondItem="bdc-N1-crn" secondAttribute="centerX" id="5hh-gK-BeL"/>
-                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="yeU-Ec-Is2" secondAttribute="bottom" constant="191" id="QYD-Eu-Aep"/>
-                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" constant="347" id="ZSp-6A-UAa"/>
-                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="53" id="bm9-Zq-Tzj"/>
+                            <constraint firstItem="E3G-LK-X97" firstAttribute="centerX" secondItem="x85-fM-Miq" secondAttribute="centerX" id="Fbm-Sj-rvR"/>
+                            <constraint firstItem="E3G-LK-X97" firstAttribute="leading" secondItem="yeU-Ec-Is2" secondAttribute="leading" id="Hbh-Sd-afe"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="jYY-ch-1bH"/>
+                            <constraint firstAttribute="trailing" secondItem="x85-fM-Miq" secondAttribute="trailing" id="pbp-rm-fDE"/>
+                            <constraint firstItem="E3G-LK-X97" firstAttribute="top" secondItem="yeU-Ec-Is2" secondAttribute="bottom" constant="8" symbolic="YES" id="rAK-Y0-oTC"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="bottom" secondItem="aVg-JY-jeM" secondAttribute="top" id="v8Z-eJ-RSG"/>
+                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="E3G-LK-X97" secondAttribute="bottom" constant="197" id="vtJ-HY-ped"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="wC4-Uq-opu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundImage" destination="x85-fM-Miq" id="BGn-Qe-U2f"/>
+                        <outlet property="goBackButton" destination="E3G-LK-X97" id="BOj-2R-pt4"/>
                         <outlet property="playButtonProperties" destination="yeU-Ec-Is2" id="XPd-Zc-0Wq"/>
                     </connections>
                 </viewController>
@@ -46,32 +73,10 @@
             </objects>
             <point key="canvasLocation" x="245" y="202"/>
         </scene>
-        <!--Facebook Share-->
-        <scene sceneID="n6I-co-Re3">
-            <objects>
-                <viewController id="rAP-Tg-Ljh" customClass="FacebookShare" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8Hw-if-bmg"/>
-                        <viewControllerLayoutGuide type="bottom" id="fDS-4E-fFL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oyY-kT-GJY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEv-Uz-Qk6">
-                                <rect key="frame" x="79" y="154" width="163" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Hey Yall"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UIw-hi-ZC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="708" y="202"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="EDDGI Background" width="640" height="1136"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

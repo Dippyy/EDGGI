@@ -21,7 +21,6 @@
     gameOverLabel.position = position;
     [gameOver addChild:gameOverLabel];
     
-    
     return gameOver;
     
 }

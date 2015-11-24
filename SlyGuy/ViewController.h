@@ -13,9 +13,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *goBackButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *playButtonProperties;
-//@property FBSDKLoginButton *loginButton;
 @property (nonatomic) IBOutlet FBSDKLoginButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 
 @end

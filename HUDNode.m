@@ -46,7 +46,6 @@
     SKLabelNode *scoreLabel = (SKLabelNode *)[self childNodeWithName:@"Score"];
     scoreLabel.text = [NSString stringWithFormat:@"%ld",(long)self.score];
     
-//    self.items = [NSMutableArray arrayWithObjects:@"one","two", nil];
     
 }
 

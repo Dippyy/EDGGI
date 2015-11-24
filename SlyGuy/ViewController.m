@@ -26,8 +26,9 @@
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
     self.loginButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - self.loginButton.frame.size.height);
 
-    //    self.loginButton.center = self.view.center;
     [self.view addSubview:self.loginButton];
+
+    
     
 }
 
@@ -39,17 +40,22 @@
     if([tokenValue  isEqual: @"Scenario2"]){
         NSLog(@"BUM");
         self.loginButton.hidden = FALSE;
-        self.playButtonProperties.hidden = FALSE;
+        self.playButtonProperties.hidden = TRUE;
+        self.backgroundImage.hidden = FALSE;
+        self.goBackButton.hidden = FALSE;
         [loginToken setObject:@"Scenario1" forKey:@"AccessToken"];
 
+    }
+    if([tokenValue isEqual:@"Scenario1"]){
+//        self.goBackButton.hidden = TRUE;
     }
 }
 
 
 -(void) viewDidAppear:(BOOL)animated {
+
     
     //Checks for a Facebook login token (determines if user has logged in before)
-    
     
     if([FBSDKAccessToken currentAccessToken] == nil){
         NSLog(@"Not logged in...");
@@ -136,7 +142,10 @@
         }
         
         self.loginButton.hidden = TRUE;
-        self.playButtonProperties.hidden = true;
+        self.playButtonProperties.hidden = TRUE;
+        self.backgroundImage.hidden = TRUE;
+        self.goBackButton.hidden = TRUE;
+
         [self prepareScene];
         
     }
@@ -147,28 +156,45 @@
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
     // Create and configure the scene.
     SGTitleScreenScene *scene = [SGTitleScreenScene sceneWithSize:skView.bounds.size];
     scene.name = @"titleScreen";
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
+    SKTransition *crossFade = [SKTransition crossFadeWithDuration:1.0f];
+    
     // Present the scene
-    [skView presentScene:scene];
+    [skView presentScene:scene transition:crossFade];
 }
 
 - (IBAction)playForFunTapped:(UIButton *)sender {
     
     self.playButtonProperties.hidden = TRUE;
     self.loginButton.hidden = TRUE;
+    self.backgroundImage.hidden = TRUE;
+    self.goBackButton.hidden = TRUE;
     
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    //Deletes all cached information about the user
+    
+//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
     [self prepareScene];
 }
+
+- (IBAction)goBackButtonTapped:(id)sender {
+    
+    self.playButtonProperties.hidden = TRUE;
+    self.loginButton.hidden = TRUE;
+    self.backgroundImage.hidden = TRUE;
+    self.goBackButton.hidden = TRUE;
+    [self prepareScene];
+    
+}
+
 
 
 - (BOOL)shouldAutorotate
@@ -176,22 +202,10 @@
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
-    
     
 }
 

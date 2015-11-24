@@ -18,10 +18,6 @@
     
     if (self = [super initWithSize:size]) {
         
-      //  NSInteger highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"];
-        
-//       [[NSUserDefaults standardUserDefaults] setObject:@"Alexx" forKey:@"gamerName"];
-        
         NSArray *colorArray = [[NSArray alloc] initWithObjects:
                                [UIColor colorWithRed:90/255.0 green:187/255.0 blue:181/255.0 alpha:1.0],
                                [UIColor colorWithRed:222/255.0 green:171/255.0 blue:66/255.0 alpha:1.0],
@@ -82,25 +78,6 @@
         editName.fontSize = 10;
         editName.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+1*(CGRectGetMidY(self.frame)/10));
         [self addChild:editName];
-
-        
-        // ---------- //
-        
-//        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width/2, self.size.height/2+20, 200, 40)];
-//        textField.center = self.view.center;
-//        textField.borderStyle = UITextBorderStyleRoundedRect;
-//        textField.textColor = [UIColor blackColor];
-//        textField.font = [UIFont systemFontOfSize:17.0];
-//        textField.placeholder = @"Enter your name here";
-//        textField.backgroundColor = [UIColor whiteColor];
-//        textField.autocorrectionType = UITextAutocorrectionTypeYes;
-//        textField.keyboardType = UIKeyboardTypeDefault;
-//        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//        textField.delegate = self.delegate;
-//        [self.view addSubview:textField];
-        
-        // ------------ //
-        
         
         //Top 5 Scores
 
@@ -141,9 +118,6 @@
                         break;
                     }
                 }
-            
-            
-
         }];
         
         SKLabelNode *homeButton = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
@@ -158,8 +132,6 @@
     return self;
 }
 
-
-
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [touches anyObject];
@@ -172,43 +144,8 @@
         SKTransition *transition = [SKTransition fadeWithDuration:1.0];
         [self.view presentScene:titleScene transition:transition];
     }
-//
-//    if([node.name isEqualToString:@"playerTwo"]){
-//        [[NSUserDefaults standardUserDefaults] setObject:@"REGGI" forKey:@"currentCharacter"];
-//        SGTitleScreenScene *titleScene = [SGTitleScreenScene sceneWithSize:self.frame.size];
-//        SKTransition *transition = [SKTransition fadeWithDuration:1.0];
-//        [self.view presentScene:titleScene transition:transition];
-//        NSLog(@"Player 2 Tapped");
-//    }
-//    
-//    if ([node.name isEqualToString:@"playerThree"]){
-//        [[NSUserDefaults standardUserDefaults] setObject:@"BOBBI" forKey:@"currentCharacter"];
-//        SGTitleScreenScene *titleScene = [SGTitleScreenScene sceneWithSize:self.frame.size];
-//        SKTransition *transition = [SKTransition fadeWithDuration:1.0];
-//        [self.view presentScene:titleScene transition:transition];
-//        NSLog(@"Player 3 Tapped");
-//    }
     
 }
-
-//-(void)didMoveToView:(SKView *)view {
-//    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(self.size.width/2, self.size.height/2+20, 200, 40)];
-//    textField.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*20/21);
-//
-//    textField.borderStyle = UITextBorderStyleRoundedRect;
-//    textField.textColor = [UIColor blackColor];
-//    textField.font = [UIFont systemFontOfSize:17.0];
-//    textField.placeholder = @"    Enter Nickname";
-//    textField.backgroundColor = [UIColor whiteColor];
-//    textField.alpha = 0.5;
-//    
-//    textField.autocorrectionType = UITextAutocorrectionTypeYes;
-//    textField.keyboardType = UIKeyboardTypeDefault;
-//    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//    textField.delegate = self.delegate;
-//    [self.view addSubview:textField];
-//}
-//
 
 @end
 

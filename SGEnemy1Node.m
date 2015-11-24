@@ -15,7 +15,6 @@
     
     SGEnemy1Node *enemy1 = [self spriteNodeWithImageNamed:@"Enemy1"];
     enemy1.size = CGSizeMake(120.0, 100.0);
-//    enemy1.size = CGSizeMake(100.0, 100.0);
     enemy1.position = position;
     enemy1.name = @"Enemy1";
     [enemy1 walkingAnimationEnemy1];

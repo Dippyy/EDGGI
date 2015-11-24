@@ -14,8 +14,6 @@
 #import "SGTitleScreenScene.h"
 #import "SGMysteryNode.h"
 
-
-
 @implementation SGUpgradeScreen
 
 
@@ -111,9 +109,6 @@
         
         // ======================================================================== //
         
-        
-
-        
         if(highScore < 100){
             playerTwo.hidden = YES;
             playerTwoName.hidden = YES;
@@ -139,7 +134,6 @@
         }
 
         [self addChild:background];
-      //  [self addChild:returnHome];
         [self addChild:titleScreen];
         [self addChild:playerOne];
         [self addChild:playerOneName];
@@ -153,7 +147,6 @@
         [self addChild:highScoreReq3];
         [self addChild:mystery3];
         [self addChild:homeButton];
-    
         
         
         if(highScore>100&&highScore<200){

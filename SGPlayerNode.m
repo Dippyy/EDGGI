@@ -13,7 +13,6 @@
 
 +(instancetype) startingPlayerAtPosition: (CGPoint) position asCharacter:(NSString*)characterName{
     
-//    SGPlayerNode *playerNode = [self spriteNodeWithColor:[SKColor redColor] size:CGSizeMake(30.0, 30.0)];
     SGPlayerNode *playerNode = [self spriteNodeWithImageNamed:characterName];
     
     if ([characterName  isEqual: @"REGGI"]) {
@@ -21,7 +20,6 @@
     } else {
     playerNode.size = CGSizeMake(50, 50);
     }
-    
     
     
     playerNode.position = position;

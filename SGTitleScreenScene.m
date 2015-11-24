@@ -13,13 +13,11 @@
 #import "SGHighScore.h"
 #import "HUDNode.h"
 #import "ViewController.h"
-#import "FacebookShare.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "UTIL.h"
 
 #import <Parse/Parse.h>
-
 
 @implementation SGTitleScreenScene
 
@@ -46,7 +44,6 @@
                                 [UIColor colorWithRed:105/255.0 green:94/255.0 blue:133/255.0 alpha:1.0],
                                 [UIColor colorWithRed:85/255.0 green:176/255.0 blue:112/255.0 alpha:1.0], nil];
         
-        
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.zPosition = 0;
@@ -72,14 +69,12 @@
         titleScreen.fontSize = 48;
         titleScreen.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/4));
         
-        
         SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         instructionTitle.name = @"Title";
         instructionTitle.zPosition = 0;
         instructionTitle.text = @"Click screen to play!";
         instructionTitle.fontSize = 20;
         instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/5));
-        
         
         SKLabelNode *highscoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highscoreLabel.name = @"HS";
@@ -110,10 +105,6 @@
         upgradeButton.text =@"Upgrade";
         upgradeButton.fontSize = 30;
         upgradeButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/1.5);
-//        SGupgradeButton *upgradeButton = [SGupgradeButton upgradeButtonPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/2)];
-//        upgradeButton.zPosition = 0;
-//        upgradeButton.name = @"upgradeTapped";
-//        upgradeButton.alpha = 1.0;
 
         [self addChild:background];
         [self addChild:titleImages];
@@ -133,9 +124,7 @@
     gamePlayScene.name = @"gameScreen";
     SKTransition *transition = [SKTransition fadeWithDuration:1.0];
 
-    
     [self.view presentScene:gamePlayScene transition:transition];
-
     
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
@@ -153,18 +142,7 @@
         [self.view presentScene:nil];
         NSUserDefaults *loginToken = [NSUserDefaults standardUserDefaults];
         [loginToken setObject:@"Scenario2" forKey:@"AccessToken"];
-        
-        //SET TOKEN TO RUN A FUNCTION IN VIEWCONTROLLER
-        
-//        [self.view presentScene:nil];
-//        
-//        FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//        loginButton.hidden = false;
 
-        
-//        FacebookShare *newVC = [[FacebookShare alloc] init];
-//        UIViewController *vc = self.view.window.rootViewController;
-//        [vc presentViewController:newVC animated: YES completion:nil];
     }
     
     if([node.name isEqualToString:@"HS"]){
@@ -178,7 +156,6 @@
         SKTransition *transition = [SKTransition fadeWithDuration:1.0];
         [self.view presentScene:highScoreScene transition:transition];
     }
-    
     
 }
 

@@ -12,8 +12,7 @@
 @implementation SGTreasureNode
 
 +(instancetype) startingTreasureAtPosition: (CGPoint) position{
-    
-//    SGTreasureNode *treasure = [self spriteNodeWithColor:[SKColor yellowColor] size:CGSizeMake(20.0, 20.0)];
+ 
    SGTreasureNode *treasure = [self spriteNodeWithImageNamed:(@"Treasure2")];
     treasure.size = CGSizeMake(30.0, 30.0);
 
