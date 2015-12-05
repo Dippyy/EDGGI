@@ -44,18 +44,17 @@
         
         SKLabelNode *playerName = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         playerName.name = @"playerName";
-        
         playerName.fontSize = 25;
         playerName.alpha = 0.8;
         playerName.position = CGPointMake(CGRectGetMidX(self.frame)*4/3, CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
         [self addChild:playerName];
         
         NSUserDefaults *playerNameDisplay = [NSUserDefaults standardUserDefaults];
-        NSString *sampleName = [playerNameDisplay valueForKey:@"PlayerFirstName"];
+        NSString *playerFBName = [playerNameDisplay valueForKey:@"PlayerFirstName"];
         
         SKLabelNode *playerNameText = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         playerNameText.name = @"playerName";
-        playerNameText.text = sampleName;
+        playerNameText.text = playerFBName;
         playerNameText.fontSize = 25;
         playerNameText.alpha = 0.8;
         playerNameText.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
@@ -92,26 +91,50 @@
                 for (PFObject *object in objects) {
 
                     counter = counter + 1 ;
-                    NSString *counterString = [NSString stringWithFormat:@"%i", counter];
-                    
-                    SKLabelNode *Rank = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
-                    Rank.text = counterString;
-                    Rank.fontSize = 20;
-                    Rank.position = CGPointMake(CGRectGetMidX(self.frame)*4/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
-                    [self addChild:Rank];
+                    int fontSize;
+                    if (counter == 1) {
+                        fontSize = 30;
+                    } else {
+                        fontSize = 20;
+                    }
                     
                     SKLabelNode *Name = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
                     NSString *fullName = [object objectForKey:@"Name"];
-                    NSArray *firstName = [fullName componentsSeparatedByString:@" "];
-                    Name.text = firstName[0];
-                    Name.fontSize = 20;
-                    Name.position = CGPointMake(CGRectGetMidX(self.frame)*8/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    NSArray *fullNameSeparated = [fullName componentsSeparatedByString:@" "];
+                    NSString *lastName = [fullNameSeparated[1] substringToIndex:1];
+                    
+//                  NSArray *rankName = [NSArray arrayWithObjects: @"Champ", @"Master", @"Pro", @"Pro", @"Pro", nil];
+                    NSString *fbhighScoreName = [NSString stringWithFormat: @"%@  %@", fullNameSeparated[0], lastName];
+                    Name.text = fbhighScoreName;
+                    Name.fontSize = fontSize;
+                    
+                    if (counter == 1) {
+                        Name.position = CGPointMake(CGRectGetMidX(self.frame)*9/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/11));
+                    } else {
+                        Name.position = CGPointMake(CGRectGetMidX(self.frame)*9/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    }
                     [self addChild:Name];
+                    
+                    NSString *counterString = [NSString stringWithFormat:@"%i", counter];
+                   
+                    
+                    SKLabelNode *Rank = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
+                    Rank.text = counterString;
+                    Rank.fontSize = fontSize;
+                    if (counter == 1) {
+                    Rank.position = CGPointMake(CGRectGetMidX(self.frame)*4/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/11));
+                    } else {
+                        Rank.position = CGPointMake(CGRectGetMidX(self.frame)*4/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    }
+                    [self addChild:Rank];
                     
                     SKLabelNode *scoreValue = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
                     scoreValue.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"scoreValue"]];
-                    scoreValue.fontSize = 20;
-                    scoreValue.position = CGPointMake(CGRectGetMidX(self.frame)*3/2, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    scoreValue.fontSize = fontSize;
+                    if (counter == 1 ) {
+                    scoreValue.position = CGPointMake(CGRectGetMidX(self.frame)*3/2, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/11));
+                    } else { scoreValue.position = CGPointMake(CGRectGetMidX(self.frame)*3/2, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    }
                     [self addChild:scoreValue];
 
                     if (counter > 4) {

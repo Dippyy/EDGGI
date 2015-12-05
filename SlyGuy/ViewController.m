@@ -27,10 +27,11 @@
     self.loginButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - self.loginButton.frame.size.height);
 
     [self.view addSubview:self.loginButton];
+    
+    self.goBackButton.hidden = TRUE;
 
-    
-    
 }
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
@@ -38,7 +39,7 @@
     NSString *tokenValue = [loginToken valueForKey:@"AccessToken"];
     
     if([tokenValue  isEqual: @"Scenario2"]){
-        NSLog(@"BUM");
+        
         self.loginButton.hidden = FALSE;
         self.playButtonProperties.hidden = TRUE;
         self.backgroundImage.hidden = FALSE;
@@ -47,18 +48,22 @@
 
     }
     if([tokenValue isEqual:@"Scenario1"]){
-//        self.goBackButton.hidden = TRUE;
+        
     }
 }
 
 
--(void) viewDidAppear:(BOOL)animated {
 
+-(void) viewDidAppear:(BOOL)animated {
     
     //Checks for a Facebook login token (determines if user has logged in before)
     
     if([FBSDKAccessToken currentAccessToken] == nil){
         NSLog(@"Not logged in...");
+        
+        //Facebook Indicator
+        NSUserDefaults *fbCheck = [NSUserDefaults standardUserDefaults];
+        [fbCheck setObject:@"NotLogged" forKey:@"fbToken"];
         
         //this code saves the score and the userID for reference (same as above)
         NSUserDefaults *initialScore = [NSUserDefaults standardUserDefaults];
@@ -67,6 +72,10 @@
     } else {
         //If the user is logged in we want to grab their information (name and unique fb id)
         NSLog(@"Logged in...");
+        
+        //Facebook Indicator
+        NSUserDefaults *fbCheck = [NSUserDefaults standardUserDefaults];
+        [fbCheck setObject:@"LoggedIn" forKey:@"fbToken"];
         
         if ([FBSDKAccessToken currentAccessToken]) {
             [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
