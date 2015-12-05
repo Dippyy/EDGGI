@@ -84,7 +84,7 @@
         
         SKLabelNode *highScoreReq2 = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highScoreReq2.name = @"playerTwoName";
-        highScoreReq2.text =@"100";
+        highScoreReq2.text =@"350";
         highScoreReq2.fontSize = 24;
         highScoreReq2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-playerOne.size.height-30);
         
@@ -103,13 +103,13 @@
         
         SKLabelNode *highScoreReq3 = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highScoreReq3.name = @"playerTwoName";
-        highScoreReq3.text =@"200";
+        highScoreReq3.text =@"500";
         highScoreReq3.fontSize = 24;
         highScoreReq3.position = CGPointMake(CGRectGetMidX(self.frame)*1.67, CGRectGetMidY(self.frame)-playerOne.size.height-30);
         
         // ======================================================================== //
         
-        if(highScore < 100){
+        if(highScore < 350){
             playerTwo.hidden = YES;
             playerTwoName.hidden = YES;
            
@@ -121,7 +121,7 @@
             mystery2.hidden = YES;
         }
         
-        if (highScore < 200){
+        if (highScore < 500){
           
             playerThree.hidden = YES;
             playerThreeName.hidden = YES;
@@ -149,9 +149,9 @@
         [self addChild:homeButton];
         
         
-        if(highScore>100&&highScore<200){
+        if(highScore>350&&highScore<500){
           [mystery2 removeFromParent];
-        } else if (highScore > 200){
+        } else if (highScore > 500){
             [mystery3 removeFromParent];
             [mystery2 removeFromParent];
             
