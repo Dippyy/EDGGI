@@ -51,11 +51,11 @@
         [self addChild:playerName];
         
         NSUserDefaults *playerNameDisplay = [NSUserDefaults standardUserDefaults];
-        NSString *sampleName = [playerNameDisplay valueForKey:@"PlayerFirstName"];
+        NSString *playerFBName = [playerNameDisplay valueForKey:@"PlayerFirstName"];
         
         SKLabelNode *playerNameText = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         playerNameText.name = @"playerName";
-        playerNameText.text = sampleName;
+        playerNameText.text = playerFBName;
         playerNameText.fontSize = 25;
         playerNameText.alpha = 0.8;
         playerNameText.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
@@ -95,13 +95,7 @@
                     int fontSize;
                     if (counter == 1) {
                         fontSize = 30;
-                    } else if (counter == 2) {
-                        fontSize = 20;
-                    } else if (counter == 3) {
-                        fontSize = 20;
-                    } else if (counter == 4) {
-                        fontSize = 20;
-                    } else if (counter == 5) {
+                    } else {
                         fontSize = 20;
                     }
                     
@@ -111,10 +105,15 @@
                     NSString *lastName = [fullNameSeparated[1] substringToIndex:1];
                     
 //                  NSArray *rankName = [NSArray arrayWithObjects: @"Champ", @"Master", @"Pro", @"Pro", @"Pro", nil];
-                    NSString *fbhighScoreName = [NSString stringWithFormat: @"%@ %@.", fullNameSeparated[0], lastName];
+                    NSString *fbhighScoreName = [NSString stringWithFormat: @"%@  %@", fullNameSeparated[0], lastName];
                     Name.text = fbhighScoreName;
                     Name.fontSize = fontSize;
-                    Name.position = CGPointMake(CGRectGetMidX(self.frame)*9/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    
+                    if (counter == 1) {
+                        Name.position = CGPointMake(CGRectGetMidX(self.frame)*9/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/11));
+                    } else {
+                        Name.position = CGPointMake(CGRectGetMidX(self.frame)*9/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    }
                     [self addChild:Name];
                     
                     NSString *counterString = [NSString stringWithFormat:@"%i", counter];
@@ -123,13 +122,20 @@
                     SKLabelNode *Rank = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
                     Rank.text = counterString;
                     Rank.fontSize = fontSize;
-                    Rank.position = CGPointMake(CGRectGetMidX(self.frame)*4/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    if (counter == 1) {
+                    Rank.position = CGPointMake(CGRectGetMidX(self.frame)*4/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/11));
+                    } else {
+                        Rank.position = CGPointMake(CGRectGetMidX(self.frame)*4/10, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    }
                     [self addChild:Rank];
                     
                     SKLabelNode *scoreValue = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
                     scoreValue.text = [NSString stringWithFormat:@"%@", [object objectForKey:@"scoreValue"]];
                     scoreValue.fontSize = fontSize;
-                    scoreValue.position = CGPointMake(CGRectGetMidX(self.frame)*3/2, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    if (counter == 1 ) {
+                    scoreValue.position = CGPointMake(CGRectGetMidX(self.frame)*3/2, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/11));
+                    } else { scoreValue.position = CGPointMake(CGRectGetMidX(self.frame)*3/2, CGRectGetMidY(self.frame)*7/8-(CGRectGetMidY(self.frame)*counter/9));
+                    }
                     [self addChild:scoreValue];
 
                     if (counter > 4) {
