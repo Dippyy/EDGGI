@@ -88,15 +88,14 @@
     }
     
         // at the first 10 seconds, enemy is added every 3 seconds
-        // between 10 and 35sec, enemy is added every 2 seconds
-        // between 35- 80sec, enemy is added every 1.5 seconds
-        // after 80 seconds, enemy is added every 1.2 seconds
+        // between 10 and 20sec, enemy is added every 2 seconds
+        // between 20 and 50sec, enemy is added every 1.5 seconds
+        // after 50 seconds, enemy is added every 1.2 seconds
     
+    float deploy = [UTIL randomWithMin:0 max:2];
     
     if (self.totalGameTime<10) {
-        if(self.timeSinceEnemyAdded > 3 && !self.gameOver){
-            
-            float deploy = [UTIL randomWithMin:0 max:2];
+        if(self.timeSinceEnemyAdded > 4 && !self.gameOver){
             
             if(deploy == 1){
                 [self placeEnemy1];
@@ -107,10 +106,8 @@
             self.timeSinceEnemyAdded = 0;
         }
 
-    } else if (self.totalGameTime<35) {
-        if(self.timeSinceEnemyAdded > 2 && !self.gameOver){
-            
-            float deploy = [UTIL randomWithMin:0 max:2];
+    } else if (self.totalGameTime<20) {
+        if(self.timeSinceEnemyAdded > 1.0 && !self.gameOver){
             
             if(deploy == 1){
                 [self placeEnemy1];
@@ -121,10 +118,11 @@
             self.timeSinceEnemyAdded = 0;
         }
 
-    } else if (self.totalGameTime<80) {
-        if(self.timeSinceEnemyAdded > 1.5 && !self.gameOver){
+    } else if (self.totalGameTime<50) {
+        
+    if(self.timeSinceEnemyAdded > 1.1 && !self.gameOver){
             
-            float deploy = [UTIL randomWithMin:0 max:2];
+  
             
             if(deploy == 1){
                 [self placeEnemy1];
@@ -139,8 +137,6 @@
     
     if(self.timeSinceEnemyAdded > 1.2 && !self.gameOver){
 
-        float deploy = [UTIL randomWithMin:0 max:2];
-        
         if(deploy == 1){
             [self placeEnemy1];
         }else{
@@ -245,22 +241,28 @@
 
 -(void) placeEnemy1 {
     
+    //Enemy 1 is the fat one
+    
     SGEnemy2Node *enemy1 = (SGEnemy2Node *)[self childNodeWithName:@"Enemy1"];
     
+    //Left
     float y1 = [UTIL randomWithMin:-enemy1.self.size.height max:self.frame.size.height];
     float x1 = self.frame.size.width/10;
     
-    float y2 = self.frame.size.height*5/6;
-    float x2 = [UTIL randomWithMin:-enemy1.size.width max:self.frame.size.width];
+    //Top
+    float y2 = self.frame.size.height*41/40;
+    float x2 = [UTIL randomWithMin:enemy1.size.width*5/10 max:self.frame.size.width-enemy1.size.width*5/10];
     
+    //Right
     float y3 = [UTIL randomWithMin:-enemy1.size.height max:self.frame.size.height];
     float x3 = self.frame.size.width*5/6;
     
-    float y4 = self.frame.size.height/10;
-    float x4 = [UTIL randomWithMin:-enemy1.size.width max:self.frame.size.width];
+    //Bottom
+    float y4 = -self.frame.size.height*1/40;
+    float x4 = [UTIL randomWithMin:enemy1.size.width*5/10 max:self.frame.size.width-enemy1.size.width*5/10];
     
-    NSArray *array = @[@"Left",@"Top",@"Right",@"Bottom"];
-    NSInteger i = [UTIL randomWithMin:0 max:4];
+    NSArray *array = @[@"Left",@"Right",@"Top",@"Bottom"];
+    NSInteger i = [UTIL randomWithMin:2 max:4];
     
     if([array[i] isEqualToString:@"Left"]){
         SGEnemy1Node *enemy1 = [SGEnemy1Node startingPlayerAtPosition:CGPointMake(x1,y1)];
@@ -300,22 +302,28 @@
 
 -(void) placeEnemy2 {
     
+    //Enemy 2 is the skinny one
+    
     SGEnemy2Node *enemy2 = (SGEnemy2Node *)[self childNodeWithName:@"Enemy2"];
     
+    //Left
     float y1 = [UTIL randomWithMin:-enemy2.self.size.height max:self.frame.size.height];
     float x1 = self.frame.size.width/10;
     
-    float y2 = self.frame.size.height*5/6;
-    float x2 = [UTIL randomWithMin:-enemy2.size.width max:self.frame.size.width];
+    //Top
+    float y2 = self.frame.size.height*41/40;
+    float x2 = [UTIL randomWithMin:enemy2.size.width*5/10 max:self.frame.size.width-enemy2.size.width*5/10];
     
+    //Right
     float y3 = [UTIL randomWithMin:-enemy2.size.height max:self.frame.size.height];
     float x3 = self.frame.size.width*5/6;
     
-    float y4 = self.frame.size.height/10;
-    float x4 = [UTIL randomWithMin:-enemy2.size.width max:self.frame.size.width];
+    //Bottom
+    float y4 = -self.frame.size.height*1/40;
+    float x4 = [UTIL randomWithMin:enemy2.size.width*5/10 max:self.frame.size.width-enemy2.size.width*5/10];
     
-    NSArray *array = @[@"Left",@"Top",@"Right",@"Bottom"];
-    NSInteger i = [UTIL randomWithMin:0 max:4];
+    NSArray *array = @[@"Left",@"Right",@"Top",@"Bottom"];
+    NSInteger i = [UTIL randomWithMin:2 max:4];
     
     if([array[i] isEqualToString:@"Left"]){
         SGEnemy2Node *enemy2 = [SGEnemy2Node startingEnemy2AtPosition:CGPointMake(x1,y1)];
