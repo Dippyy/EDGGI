@@ -30,9 +30,8 @@
     
     self.goBackButton.hidden = TRUE;
 
-    
-    
 }
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
@@ -40,6 +39,7 @@
     NSString *tokenValue = [loginToken valueForKey:@"AccessToken"];
     
     if([tokenValue  isEqual: @"Scenario2"]){
+        
         NSLog(@"BUM");
         self.loginButton.hidden = FALSE;
         self.playButtonProperties.hidden = TRUE;
@@ -50,10 +50,10 @@
     }
     if([tokenValue isEqual:@"Scenario1"]){
         NSLog(@"BUM2");
-//        self.goBackButton.hidden = TRUE;
-//        self.playButtonProperties.hidden = false;
+        
     }
 }
+
 
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -63,6 +63,10 @@
     if([FBSDKAccessToken currentAccessToken] == nil){
         NSLog(@"Not logged in...");
         
+        //Facebook Indicator
+        NSUserDefaults *fbCheck = [NSUserDefaults standardUserDefaults];
+        [fbCheck setObject:@"NotLogged" forKey:@"fbToken"];
+        
         //this code saves the score and the userID for reference (same as above)
         NSUserDefaults *initialScore = [NSUserDefaults standardUserDefaults];
         [initialScore setObject:@(0) forKey:@"HighScoreSaved"];
@@ -70,6 +74,10 @@
     } else {
         //If the user is logged in we want to grab their information (name and unique fb id)
         NSLog(@"Logged in...");
+        
+        //Facebook Indicator
+        NSUserDefaults *fbCheck = [NSUserDefaults standardUserDefaults];
+        [fbCheck setObject:@"LoggedIn" forKey:@"fbToken"];
         
         if ([FBSDKAccessToken currentAccessToken]) {
             [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]

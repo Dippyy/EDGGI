@@ -44,7 +44,6 @@
         
         SKLabelNode *playerName = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         playerName.name = @"playerName";
-        
         playerName.fontSize = 25;
         playerName.alpha = 0.8;
         playerName.position = CGPointMake(CGRectGetMidX(self.frame)*4/3, CGRectGetMidY(self.frame)+2*(CGRectGetMidY(self.frame)/4));
