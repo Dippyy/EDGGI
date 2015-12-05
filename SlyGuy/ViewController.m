@@ -74,8 +74,8 @@
                  if (!error) {
                      
                      //print the user information to the console (for testing)
-                     NSLog(@"feched name: %@", result[@"name"]);
-                     NSLog(@"fetched userid: %@", result[@"id"]);
+//                     NSLog(@"feched name: %@", result[@"name"]);
+//                     NSLog(@"fetched userid: %@", result[@"id"]);
                      NSString *myName = result[@"name"];
                      NSArray *firstName = [myName componentsSeparatedByString:@" "];
                      NSLog(@"fetched userid: %@", firstName[0]);

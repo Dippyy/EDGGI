@@ -138,7 +138,6 @@
     
     if([node.name isEqualToString:@"LoginWithFB"]){
         
-        NSLog(@"I AM GOING BACK");
         [self.view presentScene:nil];
         NSUserDefaults *loginToken = [NSUserDefaults standardUserDefaults];
         [loginToken setObject:@"Scenario2" forKey:@"AccessToken"];

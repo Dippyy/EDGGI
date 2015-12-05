@@ -21,15 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.39360278707864105" green="1" blue="0.9807049214264828" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3G-LK-X97">
-                                <rect key="frame" x="73" y="337" width="175" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3G-LK-X97">
+                                <rect key="frame" x="73" y="339" width="175" height="30"/>
                                 <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="03f-K7-OZx"/>
-                                    <constraint firstAttribute="width" constant="175" id="FPz-a5-8Pr"/>
+                                    <constraint firstAttribute="height" constant="30" id="Fnt-TJ-O4e"/>
+                                    <constraint firstAttribute="width" constant="175" id="yfL-ny-6nn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Return">
+                                <state key="normal" image="ReturnButton">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -40,10 +39,10 @@
                                 <rect key="frame" x="73" y="299" width="175" height="30"/>
                                 <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="Swf-dF-O4Y"/>
-                                    <constraint firstAttribute="height" constant="30" id="rF7-o2-L9B"/>
+                                    <constraint firstAttribute="width" constant="175" id="UZp-HT-YSp"/>
+                                    <constraint firstAttribute="height" constant="30" id="b72-xH-gl5"/>
                                 </constraints>
-                                <state key="normal" title="Play for Fun">
+                                <state key="normal" image="PlayForFunButton">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -53,14 +52,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E3G-LK-X97" firstAttribute="centerX" secondItem="x85-fM-Miq" secondAttribute="centerX" id="Fbm-Sj-rvR"/>
-                            <constraint firstItem="E3G-LK-X97" firstAttribute="leading" secondItem="yeU-Ec-Is2" secondAttribute="leading" id="Hbh-Sd-afe"/>
-                            <constraint firstItem="x85-fM-Miq" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="jYY-ch-1bH"/>
-                            <constraint firstAttribute="trailing" secondItem="x85-fM-Miq" secondAttribute="trailing" id="pbp-rm-fDE"/>
-                            <constraint firstItem="E3G-LK-X97" firstAttribute="top" secondItem="yeU-Ec-Is2" secondAttribute="bottom" constant="8" symbolic="YES" id="rAK-Y0-oTC"/>
-                            <constraint firstItem="x85-fM-Miq" firstAttribute="bottom" secondItem="aVg-JY-jeM" secondAttribute="top" id="v8Z-eJ-RSG"/>
-                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="E3G-LK-X97" secondAttribute="bottom" constant="197" id="vtJ-HY-ped"/>
-                            <constraint firstItem="x85-fM-Miq" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="wC4-Uq-opu"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="bottom" secondItem="aVg-JY-jeM" secondAttribute="top" id="85S-4m-gu2"/>
+                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="E3G-LK-X97" secondAttribute="bottom" constant="199" id="MTL-Y9-du4"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="PH2-il-EYI"/>
+                            <constraint firstItem="E3G-LK-X97" firstAttribute="centerX" secondItem="x85-fM-Miq" secondAttribute="centerX" id="PUg-dr-NfW"/>
+                            <constraint firstItem="E3G-LK-X97" firstAttribute="leading" secondItem="yeU-Ec-Is2" secondAttribute="leading" id="lzi-CF-X3b"/>
+                            <constraint firstAttribute="trailing" secondItem="x85-fM-Miq" secondAttribute="trailing" id="nOp-kj-k34"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="paN-CY-GvX"/>
+                            <constraint firstItem="E3G-LK-X97" firstAttribute="top" secondItem="yeU-Ec-Is2" secondAttribute="bottom" constant="10" id="xus-oK-7po"/>
                         </constraints>
                     </view>
                     <connections>
@@ -76,6 +75,8 @@
     </scenes>
     <resources>
         <image name="EDDGI Background" width="640" height="1136"/>
+        <image name="PlayForFunButton" width="175" height="30"/>
+        <image name="ReturnButton" width="175" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
