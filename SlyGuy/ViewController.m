@@ -27,6 +27,8 @@
     self.loginButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - self.loginButton.frame.size.height);
 
     [self.view addSubview:self.loginButton];
+    
+    self.goBackButton.hidden = TRUE;
 
     
     
@@ -47,13 +49,14 @@
 
     }
     if([tokenValue isEqual:@"Scenario1"]){
+        NSLog(@"BUM2");
 //        self.goBackButton.hidden = TRUE;
+//        self.playButtonProperties.hidden = false;
     }
 }
 
 
 -(void) viewDidAppear:(BOOL)animated {
-
     
     //Checks for a Facebook login token (determines if user has logged in before)
     
