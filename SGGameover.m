@@ -7,16 +7,19 @@
 //
 
 #import "SGGameover.h"
+#import "HUDNode.h"
+
 
 @implementation SGGameover
 
 +(instancetype) gameOverAtPosition:(CGPoint)position{
     
     SGGameover *gameOver = [self node];
+
     
     SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     gameOver.name = @"GameOver";
-    gameOverLabel.text =@"Game Over";
+    gameOverLabel.text = @"GameOver";
     gameOverLabel.fontSize = 48;
     gameOverLabel.position = position;
     [gameOver addChild:gameOverLabel];

@@ -86,7 +86,7 @@
         self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
         self.totalGameTime += currentTime - self.lastUpdateTimeInterval;
     }
-    
+        
         // at the first 10 seconds, enemy is added every 3 seconds
         // between 10 and 20sec, enemy is added every 2 seconds
         // between 20 and 50sec, enemy is added every 1.5 seconds
@@ -243,6 +243,8 @@
     
     //Enemy 1 is the fat one
     
+    [self addPoints:5];
+    
     SGEnemy2Node *enemy1 = (SGEnemy2Node *)[self childNodeWithName:@"Enemy1"];
     
     //Left
@@ -303,6 +305,7 @@
 -(void) placeEnemy2 {
     
     //Enemy 2 is the skinny one
+    [self addPoints:3];
     
     SGEnemy2Node *enemy2 = (SGEnemy2Node *)[self childNodeWithName:@"Enemy2"];
     
