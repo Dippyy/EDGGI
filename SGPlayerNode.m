@@ -16,7 +16,7 @@
     SGPlayerNode *playerNode = [self spriteNodeWithImageNamed:characterName];
     
     if ([characterName  isEqual: @"REGGI"]) {
-        playerNode.size = CGSizeMake(50,55);
+        playerNode.size = CGSizeMake(31,33);
     } else {
     playerNode.size = CGSizeMake(50, 50);
     }
