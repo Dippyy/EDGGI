@@ -21,26 +21,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.39360278707864105" green="1" blue="0.9807049214264828" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3G-LK-X97">
-                                <rect key="frame" x="73" y="339" width="175" height="30"/>
-                                <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Fnt-TJ-O4e"/>
-                                    <constraint firstAttribute="width" constant="175" id="yfL-ny-6nn"/>
-                                </constraints>
-                                <state key="normal" image="ReturnButton">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBackButtonTapped:" destination="LVB-YS-i5n" eventType="touchUpInside" id="D5m-YC-6jV"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-Ec-Is2">
-                                <rect key="frame" x="73" y="299" width="175" height="30"/>
+                                <rect key="frame" x="73" y="228" width="175" height="30"/>
                                 <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="UZp-HT-YSp"/>
-                                    <constraint firstAttribute="height" constant="30" id="b72-xH-gl5"/>
+                                    <constraint firstAttribute="width" constant="175" id="Fzx-sz-13H"/>
+                                    <constraint firstAttribute="height" constant="30" id="rJ4-6J-hTU"/>
                                 </constraints>
                                 <state key="normal" image="PlayForFunButton">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,17 +35,31 @@
                                     <action selector="playForFunTapped:" destination="LVB-YS-i5n" eventType="touchUpInside" id="cTX-sh-dZ6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3G-LK-X97">
+                                <rect key="frame" x="73" y="228" width="175" height="30"/>
+                                <color key="backgroundColor" red="0.46355742389999999" green="0.5248209331" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="i6v-SK-2Kc"/>
+                                    <constraint firstAttribute="height" constant="30" id="vkf-GV-RfM"/>
+                                </constraints>
+                                <state key="normal" image="ReturnButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackButtonTapped:" destination="LVB-YS-i5n" eventType="touchUpInside" id="D5m-YC-6jV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="x85-fM-Miq" firstAttribute="bottom" secondItem="aVg-JY-jeM" secondAttribute="top" id="85S-4m-gu2"/>
-                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="E3G-LK-X97" secondAttribute="bottom" constant="199" id="MTL-Y9-du4"/>
-                            <constraint firstItem="x85-fM-Miq" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="PH2-il-EYI"/>
-                            <constraint firstItem="E3G-LK-X97" firstAttribute="centerX" secondItem="x85-fM-Miq" secondAttribute="centerX" id="PUg-dr-NfW"/>
-                            <constraint firstItem="E3G-LK-X97" firstAttribute="leading" secondItem="yeU-Ec-Is2" secondAttribute="leading" id="lzi-CF-X3b"/>
-                            <constraint firstAttribute="trailing" secondItem="x85-fM-Miq" secondAttribute="trailing" id="nOp-kj-k34"/>
-                            <constraint firstItem="x85-fM-Miq" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="paN-CY-GvX"/>
-                            <constraint firstItem="E3G-LK-X97" firstAttribute="top" secondItem="yeU-Ec-Is2" secondAttribute="bottom" constant="10" id="xus-oK-7po"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="bottom" secondItem="aVg-JY-jeM" secondAttribute="top" id="Gz4-LE-EEB"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="centerX" secondItem="E3G-LK-X97" secondAttribute="centerX" id="VFT-BC-hku"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="Wfw-ik-w9H"/>
+                            <constraint firstItem="x85-fM-Miq" firstAttribute="top" secondItem="TvN-0d-DFh" secondAttribute="bottom" id="f50-6D-UVp"/>
+                            <constraint firstItem="aVg-JY-jeM" firstAttribute="top" secondItem="E3G-LK-X97" secondAttribute="bottom" constant="310" id="hK1-Mp-Ebc"/>
+                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="leading" secondItem="E3G-LK-X97" secondAttribute="leading" id="kq7-Jw-XNX"/>
+                            <constraint firstItem="yeU-Ec-Is2" firstAttribute="top" secondItem="E3G-LK-X97" secondAttribute="top" id="rgE-I3-Rdd"/>
+                            <constraint firstAttribute="trailing" secondItem="x85-fM-Miq" secondAttribute="trailing" id="rzW-V2-R2X"/>
                         </constraints>
                     </view>
                     <connections>
@@ -74,7 +74,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EDDGI Background" width="640" height="1136"/>
+        <image name="EDDGI Background" width="414" height="736"/>
         <image name="PlayForFunButton" width="175" height="30"/>
         <image name="ReturnButton" width="175" height="30"/>
     </resources>

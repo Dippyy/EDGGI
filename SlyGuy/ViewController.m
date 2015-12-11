@@ -24,7 +24,14 @@
     //Facebook Login Button
     self.loginButton = [[FBSDKLoginButton alloc] init];
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    self.loginButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - self.loginButton.frame.size.height);
+    self.loginButton.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2 + self.loginButton.frame.size.height * 1.5);
+    
+//    UIButton *buttonTest = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [buttonTest addTarget:self action:@selector(aMethod:) forControlEvents:UIControlEventTouchUpInside];
+////    [buttonTest setTitle:@"Show View" forState:UIControlStateNormal];
+//    [buttonTest setBackgroundImage:[UIImage imageNamed:@"PlayForFunButton"] forState:UIControlStateNormal];
+//    buttonTest.frame = CGRectMake(20.0, 210.0, 175.0, 30.0);
+//    [self.view addSubview:buttonTest];
 
     [self.view addSubview:self.loginButton];
     

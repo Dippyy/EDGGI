@@ -399,8 +399,10 @@
         [player removeFromParent];
         [treasure removeFromParent];
         
-        
         HUDNode *highScore = (HUDNode *)[self childNodeWithName:@"Hud"];
+        
+        NSUserDefaults *scoreValue = [NSUserDefaults standardUserDefaults];
+        [scoreValue setInteger:highScore.score forKey:@"PlayerScore"];
 
         if(highScore.score > self.highScoreNumber){
             NSLog(@"score is %ld and highscore is %ld",(long)highScore.score, (long)highScore.highScore);

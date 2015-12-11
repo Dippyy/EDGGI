@@ -15,12 +15,15 @@
 +(instancetype) gameOverAtPosition:(CGPoint)position{
     
     SGGameover *gameOver = [self node];
-
+    
+    NSUserDefaults *playerScore = [NSUserDefaults standardUserDefaults];
+    NSInteger *scoreValue = [playerScore integerForKey:@"PlayerScore"];
     
     SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     gameOver.name = @"GameOver";
-    gameOverLabel.text = @"GameOver";
-    gameOverLabel.fontSize = 48;
+    gameOverLabel.text = [NSString stringWithFormat:@"Your Score was %d",scoreValue];
+    
+    gameOverLabel.fontSize = 28;
     gameOverLabel.position = position;
     [gameOver addChild:gameOverLabel];
     
