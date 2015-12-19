@@ -80,18 +80,55 @@
     return  self;
 }
 
+// TIME INTERVAL, # OF MONSTERS AND SPEED
 -(void)update:(NSTimeInterval)currentTime {
     
     if(self.lastUpdateTimeInterval){
         self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
+        //COUNTER THAT STARTS AT 0 FROM GAME START
         self.totalGameTime += currentTime - self.lastUpdateTimeInterval;
     }
-        
+    
+//------------------------------------- TIME INTERVALS ---------------------------------------------//
+    int shortTimeInterval = 10;
+    int mediumTimeInterval = 20;
+    int longTimeInterval = 30;
+    int startTimeInterval = 3;
+    int specialTimeInterval = 5;
+    int pauseTimeInterval = 2;
+//--------------------------------------------------------------------------------------------------//
+
+//-------------------------------------- GAME PHASES -----------------------------------------------//
+    //PHASE A
+    if (self.totalGameTime < startTimeInterval  && !self.gameOver) {
+        NSLog(@"This is Phase A");
+    } 
+    //PHASE B
+    //PHASE C
+    //PHASE D
+    //PHASE E
+    //PHASE F
+    //PHASE G
+    //PHASE H
+    //PHASE I
+    //PHASE J
+    //PHASE K
+    //PHASE L
+    //PHASE M
+    //PHASE N
+    //PHASE O
+    //PHASE P
+    //PHASE Q
+    //PHASE R
+    //PHASE S
+    //PHASE T
+//--------------------------------------------------------------------------------------------------//
+
         // at the first 10 seconds, enemy is added every 3 seconds
         // between 10 and 20sec, enemy is added every 2 seconds
         // between 20 and 50sec, enemy is added every 1.5 seconds
         // after 50 seconds, enemy is added every 1.2 seconds
-    
+
     float deploy = [UTIL randomWithMin:0 max:2];
     
     if (self.totalGameTime<10) {
@@ -121,9 +158,7 @@
     } else if (self.totalGameTime<50) {
         
     if(self.timeSinceEnemyAdded > 1.1 && !self.gameOver){
-            
-  
-            
+        
             if(deploy == 1){
                 [self placeEnemy1];
             }else{
@@ -144,8 +179,10 @@
         }
 
         self.timeSinceEnemyAdded = 0;
+        }
     }
-    }
+    
+//----------------------------------------------------------------------///
     
     self.lastUpdateTimeInterval = currentTime;
     
