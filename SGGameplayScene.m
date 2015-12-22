@@ -50,6 +50,7 @@ int specialTimeInterval = 5;
 int pauseTimeInterval = 2;
 
 
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
 
@@ -60,14 +61,19 @@ int pauseTimeInterval = 2;
                                [UIColor colorWithRed:239/255.0 green:130/255.0 blue:100/255.0 alpha:1.0],
                                [UIColor colorWithRed:77/255.0 green:75/255.0 blue:82/255.0 alpha:1.0],
                                [UIColor colorWithRed:105/255.0 green:94/255.0 blue:133/255.0 alpha:1.0],
-                               [UIColor colorWithRed:85/255.0 green:176/255.0 blue:112/255.0 alpha:1.0], nil];
+                               [UIColor colorWithRed:85/255.0 green:176/255.0 blue:112/255.0 alpha:1.0],
+                               [UIColor colorWithRed:96/255.0 green:142/255.0 blue:213/255.0 alpha:1.0],nil];
         
         
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
+        background.name = @"background";
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+        background.color = colorArray[1];
         [self addChild:background];
-
+        background.color = colorArray[7];
+        
+//        [self changeBackground:1];
         
         
         self.highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"];
@@ -93,8 +99,8 @@ int pauseTimeInterval = 2;
 }
 
 -(void)changeBackground:(NSInteger)counter {
+    SKSpriteNode *bgImage = [SKSpriteNode spriteNodeWithImageNamed:@"Phase A-B"];
     if (counter == 1) {
-        SKSpriteNode *bgImage = [SKSpriteNode spriteNodeWithImageNamed:@"Phase A-B"];
         [self addChild:bgImage];
         bgImage.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
     } if (counter == 2) {
@@ -114,6 +120,7 @@ int pauseTimeInterval = 2;
     }
     
     float deploy = [UTIL randomWithMin:0 max:2];
+    
     
     
     //-------------------------------------- GAME PHASES -------------------------------------------//
@@ -140,15 +147,7 @@ int pauseTimeInterval = 2;
     
     //-------------------------------------- GAME INSTRUCTIONS -------------------------------------//
    
-    
-    
-    SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
-    instructionTitle.name = @"Title";
-    instructionTitle.zPosition = 0;
-    instructionTitle.text = @"Click screen to play!";
-    instructionTitle.fontSize = 20;
-    instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/5));
-//    [self addChild:instructionTitle];
+
 
 
     
@@ -248,12 +247,6 @@ int pauseTimeInterval = 2;
     
     if(self.treasurePresent){
         [self placeTreasure];
-//        
-//        float randomTreasure = [UTIL randomWithMin:0 max:100];
-//        if (randomTreasure == 12) {
-//        [self placeTreasure];
-//        }
-        
         self.treasurePresent = NO;
     }
     

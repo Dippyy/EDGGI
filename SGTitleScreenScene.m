@@ -35,16 +35,18 @@
         NSString *currentCharacter = [[NSUserDefaults standardUserDefaults] stringForKey:@"currentCharacter"];
         NSString *homeScreenName;
         
-        NSArray *colorArray = [[NSArray alloc] initWithObjects:
-                               [UIColor colorWithRed:90/255.0 green:187/255.0 blue:181/255.0 alpha:1.0],
-                                [UIColor colorWithRed:222/255.0 green:171/255.0 blue:66/255.0 alpha:1.0],
-                                [UIColor colorWithRed:223/255.0 green:86/255.0 blue:94/255.0 alpha:1.0],
-                                [UIColor colorWithRed:239/255.0 green:130/255.0 blue:100/255.0 alpha:1.0],
-                                [UIColor colorWithRed:77/255.0 green:75/255.0 blue:82/255.0 alpha:1.0],
-                                [UIColor colorWithRed:105/255.0 green:94/255.0 blue:133/255.0 alpha:1.0],
-                                [UIColor colorWithRed:85/255.0 green:176/255.0 blue:112/255.0 alpha:1.0], nil];
+//        NSArray *colorArray = [[NSArray alloc] initWithObjects:
+//                               [UIColor colorWithRed:90/255.0 green:187/255.0 blue:181/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:222/255.0 green:171/255.0 blue:66/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:223/255.0 green:86/255.0 blue:94/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:239/255.0 green:130/255.0 blue:100/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:77/255.0 green:75/255.0 blue:82/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:105/255.0 green:94/255.0 blue:133/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:85/255.0 green:176/255.0 blue:112/255.0 alpha:1.0],
+//                                [UIColor colorWithRed:96/255.0 green:142/255.0 blue:213/255.0 alpha:1.0],nil];
         
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
+        //SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"Homescreen_Background"];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         background.zPosition = 0;
         
