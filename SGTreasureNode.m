@@ -11,10 +11,16 @@
 
 @implementation SGTreasureNode
 
-+(instancetype) startingTreasureAtPosition: (CGPoint) position{
- 
-   SGTreasureNode *treasure = [self spriteNodeWithImageNamed:(@"Treasure2")];
++(instancetype) startingTreasureAtPosition: (CGPoint) position : (int) level{
+   
+    SGTreasureNode *treasure = [self spriteNodeWithImageNamed:(@"Treasure2")];
     treasure.size = CGSizeMake(30.0, 30.0);
+    
+    if (level == 1) {
+        treasure.size = CGSizeMake(40.0, 40.0);
+    } else {
+        treasure.size = CGSizeMake(30.0, 30.0);
+    }
 
     treasure.position = position;
     [treasure setupPhysicsBody];

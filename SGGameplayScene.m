@@ -40,9 +40,19 @@
 
 @implementation SGGameplayScene
 
+//------------------------------------- TIME INTERVALS ----------------------------------------//
+
+int shortTimeInterval = 10;
+int mediumTimeInterval = 20;
+int longTimeInterval = 30;
+int startTimeInterval = 5;
+int specialTimeInterval = 5;
+int pauseTimeInterval = 2;
+
+
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
+
         NSArray *colorArray = [[NSArray alloc] initWithObjects:
                                [UIColor colorWithRed:90/255.0 green:187/255.0 blue:181/255.0 alpha:1.0],
                                [UIColor colorWithRed:222/255.0 green:171/255.0 blue:66/255.0 alpha:1.0],
@@ -57,6 +67,8 @@
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         [self addChild:background];
+
+        
         
         self.highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"];
         
@@ -80,6 +92,18 @@
     return  self;
 }
 
+-(void)changeBackground:(NSInteger)counter {
+    if (counter == 1) {
+        SKSpriteNode *bgImage = [SKSpriteNode spriteNodeWithImageNamed:@"Phase A-B"];
+        [self addChild:bgImage];
+        bgImage.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+    } if (counter == 2) {
+        SKSpriteNode *bgImage = [SKSpriteNode spriteNodeWithImageNamed:@"Phase C-D"];
+        [self addChild:bgImage];
+        bgImage.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
+    }
+}
+
 // TIME INTERVAL, # OF MONSTERS AND SPEED
 -(void)update:(NSTimeInterval)currentTime {
     
@@ -89,98 +113,130 @@
         self.totalGameTime += currentTime - self.lastUpdateTimeInterval;
     }
     
-//------------------------------------- TIME INTERVALS ---------------------------------------------//
-    int shortTimeInterval = 10;
-    int mediumTimeInterval = 20;
-    int longTimeInterval = 30;
-    int startTimeInterval = 3;
-    int specialTimeInterval = 5;
-    int pauseTimeInterval = 2;
-//--------------------------------------------------------------------------------------------------//
-
-//-------------------------------------- GAME PHASES -----------------------------------------------//
-    //PHASE A
-    if (self.totalGameTime < startTimeInterval  && !self.gameOver) {
-        NSLog(@"This is Phase A");
-    } 
-    //PHASE B
-    //PHASE C
-    //PHASE D
-    //PHASE E
-    //PHASE F
-    //PHASE G
-    //PHASE H
-    //PHASE I
-    //PHASE J
-    //PHASE K
-    //PHASE L
-    //PHASE M
-    //PHASE N
-    //PHASE O
-    //PHASE P
-    //PHASE Q
-    //PHASE R
-    //PHASE S
-    //PHASE T
-//--------------------------------------------------------------------------------------------------//
-
-        // at the first 10 seconds, enemy is added every 3 seconds
-        // between 10 and 20sec, enemy is added every 2 seconds
-        // between 20 and 50sec, enemy is added every 1.5 seconds
-        // after 50 seconds, enemy is added every 1.2 seconds
-
     float deploy = [UTIL randomWithMin:0 max:2];
     
-    if (self.totalGameTime<10) {
-        if(self.timeSinceEnemyAdded > 4 && !self.gameOver){
-            
-            if(deploy == 1){
-                [self placeEnemy1];
-            }else{
-                [self placeEnemy2];
-            }
-            
-            self.timeSinceEnemyAdded = 0;
-        }
-
-    } else if (self.totalGameTime<20) {
-        if(self.timeSinceEnemyAdded > 1.0 && !self.gameOver){
-            
-            if(deploy == 1){
-                [self placeEnemy1];
-            }else{
-                [self placeEnemy2];
-            }
-            
-            self.timeSinceEnemyAdded = 0;
-        }
-
-    } else if (self.totalGameTime<50) {
-        
-    if(self.timeSinceEnemyAdded > 1.1 && !self.gameOver){
-        
-            if(deploy == 1){
-                [self placeEnemy1];
-            }else{
-                [self placeEnemy2];
-            }
-            
-            self.timeSinceEnemyAdded = 0;
-        }
-        
-    } else {
     
-    if(self.timeSinceEnemyAdded > 1.2 && !self.gameOver){
+    //-------------------------------------- GAME PHASES -------------------------------------------//
+    
+    int timeInterval_A = startTimeInterval;
+    int timeInterval_B = timeInterval_A + specialTimeInterval;
+    int timeInterval_C = timeInterval_B + specialTimeInterval;
+    int timeInterval_D = timeInterval_C + shortTimeInterval;
+    int timeInterval_E = timeInterval_D + pauseTimeInterval;
+    int timeInterval_F = timeInterval_E + longTimeInterval;
+    int timeInterval_G = timeInterval_F + mediumTimeInterval;
+    int timeInterval_H = timeInterval_G + shortTimeInterval;
+    int timeInterval_I = timeInterval_H + mediumTimeInterval;
+    int timeInterval_J = timeInterval_I + pauseTimeInterval;
+    int timeInterval_K = timeInterval_J + shortTimeInterval;
+    int timeInterval_L = timeInterval_K + longTimeInterval;
+    int timeInterval_M = timeInterval_L + mediumTimeInterval;
+    int timeInterval_N = timeInterval_M + pauseTimeInterval;
+    int timeInterval_O = timeInterval_N + mediumTimeInterval;
+    int timeInterval_P = timeInterval_O + longTimeInterval;
+    int timeInterval_Q = timeInterval_P + mediumTimeInterval;
+    int timeInterval_R = timeInterval_Q + longTimeInterval;
+    int timeInterval_S = timeInterval_R + longTimeInterval;
+    
+    //-------------------------------------- GAME INSTRUCTIONS -------------------------------------//
+   
+    
+    
+    SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
+    instructionTitle.name = @"Title";
+    instructionTitle.zPosition = 0;
+    instructionTitle.text = @"Click screen to play!";
+    instructionTitle.fontSize = 20;
+    instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/5));
+//    [self addChild:instructionTitle];
 
-        if(deploy == 1){
-            [self placeEnemy1];
-        }else{
-            [self placeEnemy2];
-        }
 
-        self.timeSinceEnemyAdded = 0;
-        }
+    
+    //--------------------------------------------------------------------------------------------------//
+    
+    if        (self.totalGameTime<timeInterval_A) {
+        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_B) {
+        if(self.timeSinceEnemyAdded > 4.0 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_C) {
+        if(self.timeSinceEnemyAdded > 3.3 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_D) {
+        if(self.timeSinceEnemyAdded > 1.6 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1];  }else{ [self placeEnemy2];}
+        self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_E) {
+        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_F) {
+        if(self.timeSinceEnemyAdded > 2.0 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_G) {
+        if(self.timeSinceEnemyAdded > 1.8 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_H) {
+        if(self.timeSinceEnemyAdded > 1.4 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_I) {
+        if(self.timeSinceEnemyAdded > 1.2 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_J) {
+        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_K) {
+        if(self.timeSinceEnemyAdded > 1.1 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    } else if (self.totalGameTime<timeInterval_L) {
+        if(self.timeSinceEnemyAdded > 0.9 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_M) {
+        if(self.timeSinceEnemyAdded > 0.87 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_N) {
+        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_O) {
+        if(self.timeSinceEnemyAdded > 0.85 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_P) {
+        if(self.timeSinceEnemyAdded > 0.83 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_Q) {
+        if(self.timeSinceEnemyAdded > 0.82 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_R) {
+        if(self.timeSinceEnemyAdded > 0.80 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else if (self.totalGameTime<timeInterval_S) {
+        if(self.timeSinceEnemyAdded > 0.76 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
+    }else {
+        if(self.timeSinceEnemyAdded > 0.70 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            self.timeSinceEnemyAdded = 0; }
     }
+        
+    
     
 //----------------------------------------------------------------------///
     
@@ -192,6 +248,12 @@
     
     if(self.treasurePresent){
         [self placeTreasure];
+//        
+//        float randomTreasure = [UTIL randomWithMin:0 max:100];
+//        if (randomTreasure == 12) {
+//        [self placeTreasure];
+//        }
+        
         self.treasurePresent = NO;
     }
     
@@ -404,9 +466,10 @@
 -(void) placeTreasure {
     
     float x = [UTIL randomWithMin:20 max:self.frame.size.width-20];
-    float y = [UTIL randomWithMin:20 max:self.frame.size.height-20];
+    float y = [UTIL randomWithMin:20+ self.frame.size.height*1/14 max:self.frame.size.height*13/14-20];
     
-    SGTreasureNode *treasure = [SGTreasureNode startingTreasureAtPosition:CGPointMake(x, y)];
+    float counter = [UTIL randomWithMin:0 max:4];
+    SGTreasureNode *treasure = [SGTreasureNode startingTreasureAtPosition:CGPointMake(x, y) :counter];
     [self addChild:treasure];
     
 }
@@ -493,7 +556,7 @@
     
     [gameOverDisplay runAction:fadeIn];
     
-    SGGameover *gameOver = [SGGameover gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*1.4)];
+    SGGameover *gameOver = [SGGameover gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*1.35)];
     gameOver.alpha=0.0;
     [self addChild:gameOver];
     self.gameOverDisplayed = YES;
@@ -508,13 +571,13 @@
     
     SKLabelNode *upgradeCharacter = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     upgradeCharacter.name = @"Upgrade Character";
-    upgradeCharacter.text =@"Upgrade Character";
+    upgradeCharacter.text =@"Upgrade Character" ;
     upgradeCharacter.fontSize = 24;
     upgradeCharacter.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*0.9);
     
     SKLabelNode *viewHighScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     viewHighScore.name = @"viewHighScore";
-    viewHighScore.text =@"View Highscore";
+    viewHighScore.text =@"Online HighScore";
     viewHighScore.fontSize = 24;
     viewHighScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*0.7);
     

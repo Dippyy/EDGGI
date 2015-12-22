@@ -69,18 +69,26 @@
         titleScreen.fontSize = 48;
         titleScreen.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/4));
         
-        SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
+        SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"AvenirNext-Regular"];
         instructionTitle.name = @"Title";
         instructionTitle.zPosition = 0;
-        instructionTitle.text = @"Click screen to play!";
+        instructionTitle.text = @"CLICK SCREEN to move", currentCharacter;
         instructionTitle.fontSize = 20;
-        instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+3*(CGRectGetMidY(self.frame)/5));
+        instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+2.6*(CGRectGetMidY(self.frame)/5));
+        
+//        SKLabelNode *instruction = [SKLabelNode labelNodeWithFontNamed:@"AvenirNext-Regular"];
+//        instruction.name = @"instruction";
+//        instruction.zPosition = 0;
+//        instruction.text =@"Dogde Monsters";
+//        instruction.fontSize = 20;
+//        instruction.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+2.8*(CGRectGetMidY(self.frame)/5));
+
         
         SKLabelNode *highscoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
         highscoreLabel.name = @"HS";
         highscoreLabel.zPosition = 0;
         highscoreLabel.text = @"HIGHSCORE";
-        highscoreLabel.fontSize = 20;
+        highscoreLabel.fontSize = 25;
         highscoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-3*(CGRectGetMidY(self.frame)/4.75));
         
         SKLabelNode *highScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
@@ -106,12 +114,15 @@
         upgradeButton.fontSize = 30;
         upgradeButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)/1.5);
 
+        
+        
         [self addChild:background];
         [self addChild:titleImages];
         [self addChild:titleScreen];
         [self addChild:instructionTitle];
+        //[self addChild:instruction];
         [self addChild:highScore];
-        [self addChild:upgradeButton];
+        //[self addChild:upgradeButton];
         [self addChild:highscoreLabel];
         [self addChild:loginWithFB];
     }

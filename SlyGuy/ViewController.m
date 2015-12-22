@@ -47,7 +47,6 @@
     
     if([tokenValue  isEqual: @"Scenario2"]){
         
-        NSLog(@"BUM");
         self.loginButton.hidden = FALSE;
         self.playButtonProperties.hidden = TRUE;
         self.backgroundImage.hidden = FALSE;
@@ -56,7 +55,6 @@
 
     }
     if([tokenValue isEqual:@"Scenario1"]){
-        NSLog(@"BUM2");
         
     }
 }

@@ -10,7 +10,7 @@
 
 @interface SGTreasureNode : SKSpriteNode
 
-+(instancetype) startingTreasureAtPosition: (CGPoint) position;
++(instancetype) startingTreasureAtPosition: (CGPoint) position : (int) level;
 
 
 @end

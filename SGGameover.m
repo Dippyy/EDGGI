@@ -8,6 +8,7 @@
 
 #import "SGGameover.h"
 #import "HUDNode.h"
+#import "UTIL.h"
 
 
 @implementation SGGameover
@@ -17,13 +18,22 @@
     SGGameover *gameOver = [self node];
     
     NSUserDefaults *playerScore = [NSUserDefaults standardUserDefaults];
-    NSInteger *scoreValue = [playerScore integerForKey:@"PlayerScore"];
+    int scoreValue = [playerScore integerForKey:@"PlayerScore"];
     
     SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     gameOver.name = @"GameOver";
-    gameOverLabel.text = [NSString stringWithFormat:@"Your Score was %d",scoreValue];
     
-    gameOverLabel.fontSize = 28;
+    float randomNumber = [UTIL randomWithMin:0 max:2];
+    
+    if (scoreValue < 260) {
+        gameOverLabel.text = [NSString stringWithFormat:@"Only %i?",scoreValue];
+    } else if (scoreValue < 500) {
+        gameOverLabel.text = [NSString stringWithFormat:@"Nice %i",scoreValue];
+    } else {
+        gameOverLabel.text = [NSString stringWithFormat:@"Wow %i",scoreValue];
+    }
+    
+    gameOverLabel.fontSize = 43;
     gameOverLabel.position = position;
     [gameOver addChild:gameOverLabel];
     

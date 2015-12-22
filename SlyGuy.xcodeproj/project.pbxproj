@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB17A1A81C2915BB00A369B4 /* SGInstructionsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = CB17A1A71C2915BB00A369B4 /* SGInstructionsNode.m */; };
 		CB42E8871B9137920001A614 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8851B9137920001A614 /* Bolts.framework */; };
 		CB42E8881B9137920001A614 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8861B9137920001A614 /* Parse.framework */; };
 		CB42E8921B91380C0001A614 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB42E8891B91380C0001A614 /* AudioToolbox.framework */; };
@@ -70,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB17A1A61C2915BB00A369B4 /* SGInstructionsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGInstructionsNode.h; sourceTree = "<group>"; };
+		CB17A1A71C2915BB00A369B4 /* SGInstructionsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGInstructionsNode.m; sourceTree = "<group>"; };
 		CB42E8851B9137920001A614 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		CB42E8861B9137920001A614 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		CB42E8891B91380C0001A614 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -251,6 +254,8 @@
 				E18D7C6819C6984500DDB33A /* SGEnemy1Node.m */,
 				E1B53D8C1B1B885F0032DB16 /* SGMysteryNode.h */,
 				E1B53D8D1B1B885F0032DB16 /* SGMysteryNode.m */,
+				CB17A1A61C2915BB00A369B4 /* SGInstructionsNode.h */,
+				CB17A1A71C2915BB00A369B4 /* SGInstructionsNode.m */,
 				E122801919CE811800C2441D /* SGGameover.h */,
 				E122801A19CE811800C2441D /* SGGameover.m */,
 				E1B53D831B1B5E4B0032DB16 /* playAgainButton.h */,
@@ -418,6 +423,7 @@
 				E122801E19CF742400C2441D /* HUDNode.m in Sources */,
 				E1B53D881B1B6B7E0032DB16 /* SGupgradeButton.m in Sources */,
 				E18D7C3B19C3CF5200DDB33A /* ViewController.m in Sources */,
+				CB17A1A81C2915BB00A369B4 /* SGInstructionsNode.m in Sources */,
 				E18D7C6019C3CFA800DDB33A /* SGTitleScreenScene.m in Sources */,
 				E1B53D8E1B1B885F0032DB16 /* SGMysteryNode.m in Sources */,
 				E1B53D851B1B5E4B0032DB16 /* playAgainButton.m in Sources */,
