@@ -69,9 +69,8 @@ int pauseTimeInterval = 2;
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithColor:colorArray[[UTIL randomWithMin:0 max:colorArray.count]] size:size];
         background.name = @"background";
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-        background.color = colorArray[1];
         [self addChild:background];
-        background.color = colorArray[7];
+//        background.color = colorArray[7];
         
 //        [self changeBackground:1];
         
