@@ -13,11 +13,12 @@
 
 +(instancetype) startingTreasureAtPosition: (CGPoint) position : (int) level{
    
-    SGTreasureNode *treasure = [self spriteNodeWithImageNamed:(@"Treasure2")];
-    treasure.size = CGSizeMake(30.0, 30.0);
     
+    NSArray *treasureImageName = [[NSArray alloc] initWithObjects: @"Treasure2", @"Treasure_red", nil];
+    SGTreasureNode *treasure = [self spriteNodeWithImageNamed:(treasureImageName[level])];
     if (level == 1) {
         treasure.size = CGSizeMake(40.0, 40.0);
+        
     } else {
         treasure.size = CGSizeMake(30.0, 30.0);
     }

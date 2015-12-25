@@ -42,12 +42,12 @@
 
 //------------------------------------- TIME INTERVALS ----------------------------------------//
 
-int shortTimeInterval = 10;
-int mediumTimeInterval = 20;
-int longTimeInterval = 30;
-int startTimeInterval = 5;
-int specialTimeInterval = 5;
-int pauseTimeInterval = 2;
+int shortTimeInterval = 9;
+int mediumTimeInterval = 18;
+int longTimeInterval = 28;
+int startTimeInterval = 4;
+int specialTimeInterval = 4;
+int pauseTimeInterval = 4;
 
 
 
@@ -154,30 +154,30 @@ int pauseTimeInterval = 2;
     
     if        (self.totalGameTime<timeInterval_A) {
         if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
-            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            if(deploy == 1){ [self placeEnemy2]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_B) {
-        if(self.timeSinceEnemyAdded > 4.0 && !self.gameOver){
-            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+        if(self.timeSinceEnemyAdded > 1.3 && !self.gameOver){
+            if(deploy == 1){ [self placeEnemy2]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_C) {
-        if(self.timeSinceEnemyAdded > 3.3 && !self.gameOver){
+        if(self.timeSinceEnemyAdded > 1.3 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_D) {
         if(self.timeSinceEnemyAdded > 1.6 && !self.gameOver){
-            if(deploy == 1){ [self placeEnemy1];  }else{ [self placeEnemy2];}
+            if(deploy == 1){ [self placeEnemy2];  }else{ [self placeEnemy2];}
         self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_E) {
         if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
-            if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
+            if(deploy == 1){ [self placeEnemy2]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_F) {
         if(self.timeSinceEnemyAdded > 2.0 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_G) {
-        if(self.timeSinceEnemyAdded > 1.8 && !self.gameOver){
+        if(self.timeSinceEnemyAdded > 1.9 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_H) {
@@ -244,7 +244,7 @@ int pauseTimeInterval = 2;
         [self performGameOver];
     }
     
-    if(self.treasurePresent){
+    if(self.treasurePresent && self.totalGameTime > timeInterval_C){
         [self placeTreasure];
         self.treasurePresent = NO;
     }
@@ -343,7 +343,7 @@ int pauseTimeInterval = 2;
     float x1 = self.frame.size.width/10;
     
     //Top
-    float y2 = self.frame.size.height*41/40;
+    float y2 = self.frame.size.height+enemy1.size.height*2;
     float x2 = [UTIL randomWithMin:enemy1.size.width*5/10 max:self.frame.size.width-enemy1.size.width*5/10];
     
     //Right
@@ -351,7 +351,7 @@ int pauseTimeInterval = 2;
     float x3 = self.frame.size.width*5/6;
     
     //Bottom
-    float y4 = -self.frame.size.height*1/40;
+    float y4 = -enemy1.size.height*2;
     float x4 = [UTIL randomWithMin:enemy1.size.width*5/10 max:self.frame.size.width-enemy1.size.width*5/10];
     
     NSArray *array = @[@"Left",@"Right",@"Top",@"Bottom"];
@@ -405,7 +405,7 @@ int pauseTimeInterval = 2;
     float x1 = self.frame.size.width/10;
     
     //Top
-    float y2 = self.frame.size.height*41/40;
+    float y2 = self.frame.size.height+enemy2.size.height;
     float x2 = [UTIL randomWithMin:enemy2.size.width*5/10 max:self.frame.size.width-enemy2.size.width*5/10];
     
     //Right
@@ -413,7 +413,7 @@ int pauseTimeInterval = 2;
     float x3 = self.frame.size.width*5/6;
     
     //Bottom
-    float y4 = -self.frame.size.height*1/40;
+    float y4 = -enemy2.size.height;
     float x4 = [UTIL randomWithMin:enemy2.size.width*5/10 max:self.frame.size.width-enemy2.size.width*5/10];
     
     NSArray *array = @[@"Left",@"Right",@"Top",@"Bottom"];
@@ -455,15 +455,82 @@ int pauseTimeInterval = 2;
     
 }
 
+
+//-(void) placeEnemy3 {
+//    
+//    //Enemy 3 is the new one
+//    
+//    [self addPoints:10];
+//    
+//    SGEnemy3Node *enemy3 = (SGEnemy3Node *)[self childNodeWithName:@"Enemy3"];
+//    
+//    //Left
+//    float y1 = [UTIL randomWithMin:-enemy3.self.size.height max:self.frame.size.height];
+//    float x1 = self.frame.size.width/10;
+//    
+//    //Top
+//    float y2 = self.frame.size.height*41/40;
+//    float x2 = [UTIL randomWithMin:enemy3.size.width*5/10 max:self.frame.size.width-enemy3.size.width*5/10];
+//    
+//    //Right
+//    float y3 = [UTIL randomWithMin:-enemy3.size.height max:self.frame.size.height];
+//    float x3 = self.frame.size.width*5/6;
+//    
+//    //Bottom
+//    float y4 = -self.frame.size.height*1/40;
+//    float x4 = [UTIL randomWithMin:enemy3.size.width*5/10 max:self.frame.size.width-enemy3.size.width*5/10];
+//    
+//    NSArray *array = @[@"Left",@"Right",@"Top",@"Bottom"];
+//    NSInteger i = [UTIL randomWithMin:2 max:4];
+//    
+//    if([array[i] isEqualToString:@"Left"]){
+//        SGEnemy3Node *enemy3 = [SGEnemy3Node startingEnemy3AtPosition:CGPointMake(x1,y1)];
+//        [self addChild:enemy3];
+//        [enemy3 runAction:[SKAction rotateByAngle:4.71 duration:0]];
+//        float dy = [UTIL randomWithMin:200 max:250];
+//        enemy3.physicsBody.velocity = CGVectorMake(dy, 0);
+//        [enemy3 fadeOut];
+//        
+//        
+//    }else if([array[i] isEqualToString:@"Top"]){
+//        SGEnemy3Node *enemy3= [SGEnemy3Node startingEnemy3AtPosition:CGPointMake(x2,y2)];
+//        [self addChild:enemy3];
+//        [enemy3 runAction:[SKAction rotateByAngle:3.14 duration:0]];
+//        float dy = [UTIL randomWithMin:200 max:250];
+//        enemy3.physicsBody.velocity = CGVectorMake(0, -dy);
+//        [enemy3 fadeOut];
+//        
+//    }else if([array[i] isEqualToString:@"Right"]){
+//        SGEnemy3Node *enemy3 = [SGEnemy3Node startingEnemy3AtPosition:CGPointMake(x3,y3)];
+//        [self addChild:enemy3];
+//        [enemy3 runAction:[SKAction rotateByAngle:1.57 duration:0]];
+//        float dy = [UTIL randomWithMin:200 max:250];
+//        enemy3.physicsBody.velocity = CGVectorMake(-dy, 0);
+//        [enemy3 fadeOut];
+//        
+//    }else if([array[i] isEqualToString:@"Bottom"]){
+//        SGEnemy3Node *enemy3 = [SGEnemy3Node startingEnemy3AtPosition:CGPointMake(x4,y4)];
+//        [self addChild:enemy3];
+//        float dy = [UTIL randomWithMin:200 max:250];
+//        enemy3.physicsBody.velocity = CGVectorMake(0, dy);
+//        [enemy3 fadeOut];
+//        
+//    }
+//    
+//}
+//
+
 -(void) placeTreasure {
     
+   
     float x = [UTIL randomWithMin:20 max:self.frame.size.width-20];
     float y = [UTIL randomWithMin:20+ self.frame.size.height*1/14 max:self.frame.size.height*13/14-20];
     
-    float counter = [UTIL randomWithMin:0 max:4];
+    float counter = [UTIL randomWithMin:0 max:2];
     SGTreasureNode *treasure = [SGTreasureNode startingTreasureAtPosition:CGPointMake(x, y) :counter];
-    [self addChild:treasure];
     
+        [self addChild:treasure];
+
 }
 
 -(void) didBeginContact:(SKPhysicsContact *)contact{

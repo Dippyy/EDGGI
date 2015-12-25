@@ -25,16 +25,16 @@
 
 -(void) fadeOut {
     
-    float time = [UTIL randomWithMin:4 max:5];
-    float timeToFade = 0.75*time;
+    float time = [UTIL randomWithMin:5 max:6];
+    float timeToFade = 0.80*time;
     
     SKAction *fadeTimer = [SKAction waitForDuration:timeToFade];
     SKAction *fadeOut = [SKAction fadeOutWithDuration:time-timeToFade];
+    SKAction *fadeIn = [SKAction fadeInWithDuration:0.8];
     
-    NSArray *arrayOfActions = @[fadeTimer,fadeOut];
+    NSArray *arrayOfActions = @[fadeIn,fadeTimer,fadeOut];
     
     SKAction *sequence = [SKAction sequence:arrayOfActions];
-    
     [self runAction:sequence];
     
 }

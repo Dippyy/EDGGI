@@ -25,8 +25,8 @@
 
 -(void) fadeOut {
     
-    float time = [UTIL randomWithMin:4 max:5];
-    float timeToFade = 0.75*time;
+    float time = [UTIL randomWithMin:7 max:8];
+    float timeToFade = 0.80*time;
     
     SKAction *fadeTimer = [SKAction waitForDuration:timeToFade];
     SKAction *fadeOut = [SKAction fadeOutWithDuration:time-timeToFade];
