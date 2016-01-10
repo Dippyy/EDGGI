@@ -47,7 +47,7 @@ int mediumTimeInterval = 18;
 int longTimeInterval = 28;
 int startTimeInterval = 4;
 int specialTimeInterval = 4;
-int pauseTimeInterval = 4;
+int pauseTimeInterval = 7;
 
 
 
@@ -55,14 +55,14 @@ int pauseTimeInterval = 4;
     if (self = [super initWithSize:size]) {
 
         NSArray *colorArray = [[NSArray alloc] initWithObjects:
-                               [UIColor colorWithRed:90/255.0 green:187/255.0 blue:181/255.0 alpha:1.0],
-                               [UIColor colorWithRed:222/255.0 green:171/255.0 blue:66/255.0 alpha:1.0],
+                               [UIColor colorWithRed:175/255.0 green:42/255.0 blue:72/255.0 alpha:1.0],
+                               [UIColor colorWithRed:234/255.0 green:207/255.0 blue:54/255.0 alpha:1.0],
                                [UIColor colorWithRed:223/255.0 green:86/255.0 blue:94/255.0 alpha:1.0],
                                [UIColor colorWithRed:239/255.0 green:130/255.0 blue:100/255.0 alpha:1.0],
-                               [UIColor colorWithRed:77/255.0 green:75/255.0 blue:82/255.0 alpha:1.0],
-                               [UIColor colorWithRed:105/255.0 green:94/255.0 blue:133/255.0 alpha:1.0],
-                               [UIColor colorWithRed:85/255.0 green:176/255.0 blue:112/255.0 alpha:1.0],
-                               [UIColor colorWithRed:96/255.0 green:142/255.0 blue:213/255.0 alpha:1.0],nil];
+                               [UIColor colorWithRed:243/255.0 green:171/255.0 blue:201/255.0 alpha:1.0],
+                               [UIColor colorWithRed:175/255.0 green:42/255.0 blue:72/255.0 alpha:1.0],
+                               [UIColor colorWithRed:99/255.0 green:206/255.0 blue:131/255.0 alpha:1.0],
+                               [UIColor colorWithRed:105/255.0 green:151/255.0 blue:221/255.0 alpha:1.0],nil];
         
         
         
@@ -70,9 +70,7 @@ int pauseTimeInterval = 4;
         background.name = @"background";
         background.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
         [self addChild:background];
-//        background.color = colorArray[7];
         
-//        [self changeBackground:1];
         
         
         self.highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighscoreSaved"];
@@ -97,18 +95,6 @@ int pauseTimeInterval = 4;
     return  self;
 }
 
--(void)changeBackground:(NSInteger)counter {
-    SKSpriteNode *bgImage = [SKSpriteNode spriteNodeWithImageNamed:@"Phase A-B"];
-    if (counter == 1) {
-        [self addChild:bgImage];
-        bgImage.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-    } if (counter == 2) {
-        SKSpriteNode *bgImage = [SKSpriteNode spriteNodeWithImageNamed:@"Phase C-D"];
-        [self addChild:bgImage];
-        bgImage.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame));
-    }
-}
-
 // TIME INTERVAL, # OF MONSTERS AND SPEED
 -(void)update:(NSTimeInterval)currentTime {
     
@@ -120,7 +106,7 @@ int pauseTimeInterval = 4;
     
     float deploy = [UTIL randomWithMin:0 max:2];
     
-    
+    SKSpriteNode *background = (SKSpriteNode*)[self childNodeWithName:@"background"];
     
     //-------------------------------------- GAME PHASES -------------------------------------------//
     
@@ -131,7 +117,7 @@ int pauseTimeInterval = 4;
     int timeInterval_E = timeInterval_D + pauseTimeInterval;
     int timeInterval_F = timeInterval_E + longTimeInterval;
     int timeInterval_G = timeInterval_F + mediumTimeInterval;
-    int timeInterval_H = timeInterval_G + shortTimeInterval;
+    int timeInterval_H = timeInterval_G + pauseTimeInterval;
     int timeInterval_I = timeInterval_H + mediumTimeInterval;
     int timeInterval_J = timeInterval_I + pauseTimeInterval;
     int timeInterval_K = timeInterval_J + shortTimeInterval;
@@ -140,7 +126,7 @@ int pauseTimeInterval = 4;
     int timeInterval_N = timeInterval_M + pauseTimeInterval;
     int timeInterval_O = timeInterval_N + mediumTimeInterval;
     int timeInterval_P = timeInterval_O + longTimeInterval;
-    int timeInterval_Q = timeInterval_P + mediumTimeInterval;
+    int timeInterval_Q = timeInterval_P + pauseTimeInterval;
     int timeInterval_R = timeInterval_Q + longTimeInterval;
     int timeInterval_S = timeInterval_R + longTimeInterval;
     
@@ -167,11 +153,10 @@ int pauseTimeInterval = 4;
     } else if (self.totalGameTime<timeInterval_D) {
         if(self.timeSinceEnemyAdded > 1.6 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy2];  }else{ [self placeEnemy2];}
-        self.timeSinceEnemyAdded = 0; }
+            self.timeSinceEnemyAdded = 0;}
     } else if (self.totalGameTime<timeInterval_E) {
-        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
-            if(deploy == 1){ [self placeEnemy2]; }else{ [self placeEnemy2];}
-            self.timeSinceEnemyAdded = 0; }
+        if(self.timeSinceEnemyAdded > 6 && !self.gameOver){
+            self.timeSinceEnemyAdded = 0; background.alpha = 0.85;}
     } else if (self.totalGameTime<timeInterval_F) {
         if(self.timeSinceEnemyAdded > 2.0 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
@@ -181,17 +166,17 @@ int pauseTimeInterval = 4;
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_H) {
-        if(self.timeSinceEnemyAdded > 1.4 && !self.gameOver){
+        if(self.timeSinceEnemyAdded > 6 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
-            self.timeSinceEnemyAdded = 0; }
+            self.timeSinceEnemyAdded = 0; background.alpha = 0.65; }
     } else if (self.totalGameTime<timeInterval_I) {
         if(self.timeSinceEnemyAdded > 1.2 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     } else if (self.totalGameTime<timeInterval_J) {
-        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
+        if(self.timeSinceEnemyAdded > 6 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
-            self.timeSinceEnemyAdded = 0; }
+            self.timeSinceEnemyAdded = 0; background.alpha = 0.45;}
     } else if (self.totalGameTime<timeInterval_K) {
         if(self.timeSinceEnemyAdded > 1.1 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
@@ -205,9 +190,9 @@ int pauseTimeInterval = 4;
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     }else if (self.totalGameTime<timeInterval_N) {
-        if(self.timeSinceEnemyAdded > 10000 && !self.gameOver){
+        if(self.timeSinceEnemyAdded > 6 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
-            self.timeSinceEnemyAdded = 0; }
+            self.timeSinceEnemyAdded = 0; background.alpha = 0.25;}
     }else if (self.totalGameTime<timeInterval_O) {
         if(self.timeSinceEnemyAdded > 0.85 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
@@ -217,9 +202,9 @@ int pauseTimeInterval = 4;
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
             self.timeSinceEnemyAdded = 0; }
     }else if (self.totalGameTime<timeInterval_Q) {
-        if(self.timeSinceEnemyAdded > 0.82 && !self.gameOver){
+        if(self.timeSinceEnemyAdded > 6 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
-            self.timeSinceEnemyAdded = 0; }
+            self.timeSinceEnemyAdded = 0; background.alpha = 0.25;}
     }else if (self.totalGameTime<timeInterval_R) {
         if(self.timeSinceEnemyAdded > 0.80 && !self.gameOver){
             if(deploy == 1){ [self placeEnemy1]; }else{ [self placeEnemy2];}
@@ -636,7 +621,7 @@ int pauseTimeInterval = 4;
     
     SKLabelNode *viewHighScore = [SKLabelNode labelNodeWithFontNamed:@"Nexa Bold"];
     viewHighScore.name = @"viewHighScore";
-    viewHighScore.text =@"Online HighScore";
+    viewHighScore.text =@"Scoreboard";
     viewHighScore.fontSize = 24;
     viewHighScore.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)*0.7);
     
