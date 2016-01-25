@@ -74,7 +74,7 @@
         SKLabelNode *instructionTitle = [SKLabelNode labelNodeWithFontNamed:@"AvenirNext-Regular"];
         instructionTitle.name = @"Title";
         instructionTitle.zPosition = 0;
-        instructionTitle.text = @"CLICK SCREEN to move", currentCharacter;
+        instructionTitle.text = @"CLICK SCREEN to move";
         instructionTitle.fontSize = 20;
         instructionTitle.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+2.6*(CGRectGetMidY(self.frame)/5));
         
